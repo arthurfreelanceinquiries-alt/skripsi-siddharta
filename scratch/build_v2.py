@@ -389,7 +389,19 @@ def cover_para(text, size=12, bold=True, italic=False, before=0, after=0, runs_s
         set_run(r, size, bold, italic)
     return p
 
-# COVER (KAPITAL, 14pt per G1, stage spacing, [OPEN] dipertahankan, tanpa logo -> OPEN)
+# COVER (Logo UKRIDA di paling atas, KAPITAL 14pt per G1, stage spacing)
+logo_path = Path("01_Naskah_Utama/images/ukrida_pentagram.png")
+if not logo_path.exists():
+    logo_path = Path("01_Naskah_Utama/images/Logo_UKRIDA_300x300.png")
+
+p_logo = doc.add_paragraph()
+p_logo.alignment = WD_ALIGN_PARAGRAPH.CENTER
+p_logo.paragraph_format.line_spacing = 1.0
+p_logo.paragraph_format.space_before = Pt(0)
+p_logo.paragraph_format.space_after = Pt(18)
+r_logo = p_logo.add_run()
+r_logo.add_picture(str(logo_path), width=Cm(3.2), height=Cm(3.2))
+
 cover_para("PROPOSAL TUGAS AKHIR", size=14, bold=True, before=6, after=18)
 # judul kapital with foreign italic+bold
 title_parts = [
@@ -410,8 +422,8 @@ title_parts = [
     (" PADA GENERASI Z", True, False),
 ]
 cover_para("", size=14, bold=True, before=12, after=24, runs_spec=title_parts)
-cover_para("Diajukan Kepada Program Studi S1 Manajemen", size=12, bold=False, before=18, after=0)
-cover_para("Untuk Menyusun Tugas Akhir Sarjana Manajemen (S.M.)", size=12, bold=False, before=0, after=24)
+cover_para("Diajukan Kepada Program Studi Manajemen", size=12, bold=False, before=18, after=0)
+cover_para("Untuk Menyusun Tugas Akhir Sarjana Manajemen", size=12, bold=False, before=0, after=24)
 # Diajukan Oleh with Siddharta Pratama Budiono & 312023017
 p_oleh = doc.add_paragraph()
 p_oleh.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -419,15 +431,15 @@ p_oleh.paragraph_format.space_before=Pt(24); p_oleh.paragraph_format.space_after
 p_oleh.paragraph_format.line_spacing=1.0
 r = p_oleh.add_run("Diajukan Oleh:"); set_run(r,12,False,False)
 r = p_oleh.add_run(); r.add_break()
-r = p_oleh.add_run("Nama : Siddharta Pratama Budiono"); set_run(r,12,True,False)
+r = p_oleh.add_run("Siddharta Pratama Budiono"); set_run(r,12,True,False)
 r = p_oleh.add_run(); r.add_break()
-r = p_oleh.add_run("(NIM : 312023017)"); set_run(r,12,True,False)
+r = p_oleh.add_run("312023017"); set_run(r,12,True,False)
 # prodi - KAPITAL bold, breaks
 p_prodi = doc.add_paragraph()
 p_prodi.alignment=WD_ALIGN_PARAGRAPH.CENTER
 p_prodi.paragraph_format.space_before=Pt(48); p_prodi.paragraph_format.space_after=Pt(0)
 p_prodi.paragraph_format.line_spacing=1.0
-prodi_lines = ["PROGRAM STUDI S1 MANAJEMEN","KONSENTRASI MANAJEMEN PEMASARAN","FAKULTAS EKONOMI DAN BISNIS","UNIVERSITAS KRISTEN KRIDA WACANA","JAKARTA 2026"]
+prodi_lines = ["PROGRAM STUDI MANAJEMEN","FAKULTAS EKONOMI DAN BISNIS","UNIVERSITAS KRISTEN KRIDA WACANA","JAKARTA 2026"]
 for idx_line, line in enumerate(prodi_lines):
     r = p_prodi.add_run(line)
     set_run(r,12,True,False)
@@ -441,10 +453,10 @@ sec1.different_first_page_header_footer = False
 sec1.footer.is_linked_to_previous = False
 sec1.header.is_linked_to_previous = False
 set_pgnum(sec1, fmt="lowerRoman", start=2)
-# footer roman center
+# footer roman right
 fp1 = sec1.footer.paragraphs[0]
 fp1.style = doc.styles['Footer']
-fp1.alignment = WD_ALIGN_PARAGRAPH.CENTER
+fp1.alignment = WD_ALIGN_PARAGRAPH.RIGHT
 fp1.text=""
 r = fp1.add_run("Universitas Kristen Krida Wacana | "); set_run(r,10,True,False)
 add_page_field(fp1, display="ii")
@@ -468,28 +480,28 @@ toc_entries = [
     ("DAFTAR GAMBAR", "toc 1", "iv"),
     ("BAB I PENDAHULUAN", "toc 1", "1"),
     ("1.1 Latar Belakang Penelitian", "toc 2", "1"),
-    ("1.2 Rumusan Masalah", "toc 2", "8"),
-    ("1.3 Tujuan Penelitian", "toc 2", "9"),
-    ("1.4 Manfaat Penelitian", "toc 2", "9"),
-    ("1.4.1 Manfaat Teoritis", "toc 3", "9"),
-    ("1.4.2 Manfaat Praktis", "toc 3", "10"),
-    ("BAB II TINJAUAN PUSTAKA DAN PENGEMBANGAN HIPOTESIS", "toc 1", "11"),
-    ("2.1 Landasan Teori", "toc 2", "11"),
-    ("2.1.1 Influencer Marketing sebagai Kredibilitas Sumber", "toc 3", "11"),
-    ("2.1.2 Electronic Word of Mouth (eWOM) dan Adopsi Informasi", "toc 3", "12"),
-    ("2.1.3 Perceived Enjoyment pada Sistem Hedonik", "toc 3", "13"),
-    ("2.1.4 Intention to Play sebagai Niat Perilaku", "toc 3", "14"),
-    ("2.1.5 Generasi Z sebagai Konteks, bukan Variabel", "toc 3", "15"),
-    ("2.2 Penelitian Sebelumnya", "toc 2", "15"),
-    ("2.3 Pengembangan Hipotesis", "toc 2", "18"),
-    ("2.4 Rerangka Penelitian", "toc 2", "20"),
-    ("BAB III METODE PENELITIAN", "toc 1", "21"),
-    ("3.1 Jenis dan Sumber Data", "toc 2", "21"),
-    ("3.2 Populasi dan Sampel", "toc 2", "22"),
-    ("3.3 Model Penelitian", "toc 2", "24"),
-    ("3.4 Operasionalisasi Variabel", "toc 2", "25"),
-    ("3.5 Metode Analisis Data", "toc 2", "28"),
-    ("DAFTAR PUSTAKA", "toc 1", "30"),
+    ("1.2 Rumusan Masalah", "toc 2", "6"),
+    ("1.3 Tujuan Penelitian", "toc 2", "7"),
+    ("1.4 Manfaat Penelitian", "toc 2", "7"),
+    ("1.4.1 Manfaat Teoritis", "toc 3", "7"),
+    ("1.4.2 Manfaat Praktis", "toc 3", "7"),
+    ("BAB II TINJAUAN PUSTAKA DAN PENGEMBANGAN HIPOTESIS", "toc 1", "8"),
+    ("2.1 Landasan Teori", "toc 2", "8"),
+    ("2.1.1 Influencer Marketing sebagai Kredibilitas Sumber", "toc 3", "8"),
+    ("2.1.2 Electronic Word of Mouth (eWOM) dan Adopsi Informasi", "toc 3", "9"),
+    ("2.1.3 Perceived Enjoyment pada Sistem Hedonik", "toc 3", "10"),
+    ("2.1.4 Intention to Play sebagai Niat Perilaku", "toc 3", "11"),
+    ("2.1.5 Generasi Z sebagai Konteks, bukan Variabel", "toc 3", "11"),
+    ("2.2 Penelitian Sebelumnya", "toc 2", "12"),
+    ("2.3 Pengembangan Hipotesis", "toc 2", "15"),
+    ("2.4 Rerangka Penelitian", "toc 2", "16"),
+    ("BAB III METODE PENELITIAN", "toc 1", "18"),
+    ("3.1 Jenis dan Sumber Data", "toc 2", "18"),
+    ("3.2 Populasi dan Sampel", "toc 2", "19"),
+    ("3.3 Model Penelitian", "toc 2", "20"),
+    ("3.4 Operasionalisasi Variabel", "toc 2", "21"),
+    ("3.5 Metode Analisis Data", "toc 2", "25"),
+    ("DAFTAR PUSTAKA", "toc 1", "27"),
 ]
 for txt, sty, pg in toc_entries:
     p = doc.add_paragraph(style=sty)
@@ -511,8 +523,8 @@ dt.alignment=WD_ALIGN_PARAGRAPH.CENTER
 dt.paragraph_format.page_break_before=True
 for r in dt.runs: set_run(r,12,True,False)
 lot = [
-    ("Tabel 2.1 Ringkasan Penelitian Sebelumnya (S01–S18)", "15"),
-    ("Tabel 3.1 Operasionalisasi Variabel", "25"),
+    ("Tabel 2.1 Ringkasan Penelitian Sebelumnya (S01–S18)", "12"),
+    ("Tabel 3.1 Operasionalisasi Variabel", "21"),
 ]
 for txt,pg in lot:
     p = doc.add_paragraph(style='toc 1')
@@ -526,7 +538,7 @@ dg = doc.add_paragraph("DAFTAR GAMBAR", style='Heading 1')
 dg.alignment=WD_ALIGN_PARAGRAPH.CENTER
 dg.paragraph_format.page_break_before=True
 for r in dg.runs: set_run(r,12,True,False)
-lof = [("Gambar 2.1 Model Rerangka Konseptual Penelitian","20")]
+lof = [("Gambar 2.1 Model Rerangka Konseptual Penelitian","16")]
 for txt,pg in lof:
     p = doc.add_paragraph(style='toc 1')
     add_dot_tab(p, 7938)
@@ -814,10 +826,21 @@ while i < len(lines2):
                     mid_x = 4.95; t = (mid_x - sx) / (ex - sx); line_y = sy + t * (ey - sy)
                     ax.text(mid_x, line_y + 0.26, labels[idx_ar], ha='center', va='center', fontsize=13, fontfamily='serif', weight='bold', color='black')
                 ax.text(5.0, 4.35, 'Populasi: Generasi Z (Indonesia) — Objek: Mobile Legends', ha='center', va='center', fontsize=12.5, fontfamily='serif', color='black')
-                ax.text(5.0, 0.22, 'H4: simultan X1, X2, X3 → Y', ha='center', va='center', fontsize=12.5, fontfamily='serif', style='italic', color='black')
                 plt.tight_layout(pad=0.2)
                 plt.savefig(str(FIG_TMP), bbox_inches='tight', dpi=300)
                 plt.close()
+                import shutil
+                for extra_p in [
+                    Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\scratch\fig_rerangka_21.png"),
+                    Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\scratch\fig_v2.png"),
+                    Path(r"C:\Users\Arthur Reezan\AppData\Local\Temp\opencode\fig_v2.png"),
+                    Path(r"C:\Users\Arthur Reezan\AppData\Local\Temp\opencode\fig_rerangka_21.png")
+                ]:
+                    try:
+                        if extra_p.parent.exists() and str(extra_p.resolve()) != str(FIG_TMP.resolve()):
+                            shutil.copyfile(str(FIG_TMP), str(extra_p))
+                    except Exception:
+                        pass
             except Exception as e:
                 print("fig err", e)
             # insert image
@@ -1081,6 +1104,11 @@ for ent in entries:
                 r=p.add_run(part[pos:]); set_run(r,12,False,False)
 
 # save
-doc.save(str(OUT_DOCX))
-print(f"saved {OUT_DOCX} size={OUT_DOCX.stat().st_size}")
+try:
+    doc.save(str(OUT_DOCX))
+    print(f"saved {OUT_DOCX} size={OUT_DOCX.stat().st_size}")
+except PermissionError:
+    fallback_docx = BASE / "Proposal_Skripsi_MLBB_GenZ_v2_updated.docx"
+    doc.save(str(fallback_docx))
+    print(f"[NOTE] {OUT_DOCX.name} is locked by Word. Saved updated copy to {fallback_docx.name} size={fallback_docx.stat().st_size}")
 print(f"entries={len(entries)} paras={len(doc.paragraphs)} tables={len(doc.tables)} sections={len(doc.sections)}")

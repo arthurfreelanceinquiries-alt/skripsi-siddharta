@@ -59,10 +59,10 @@ Legenda status: **VERIFIED** = terbukti dari judul/pernyataan user eksplisit. **
 | Unit yang diteliti | Individu Generasi Z di Indonesia yang terpapar konteks Mobile Legends (kriteria inklusi rinci OPEN — lihat P06) |
 | Populasi + kriteria inklusi | Generasi Z, Indonesia nasional — VERIFIED sebagai label; rentang lahir, batas usia, status bermain, teknik sampling: OPEN |
 | Periode / versi / batas tanggal | Periode pengumpulan data: OPEN. Versi game/patch: TIDAK diklaim (OPEN). Tanggal akses sumber masa depan dicatat per-baris di Evidence Ledger |
-| Estimand (apa yang diestimasi) | PROPOSED (menunggu P04): pengaruh parsial dan simultan X1,X2,X3 terhadap Y. Opsi A: koefisien β regresi berganda + R². Opsi B: path coefficient SEM + R²/Q²/f². Belum beku. |
+| Estimand (apa yang diestimasi) | PROPOSED (menunggu P04): pengaruh langsung parsial X1, X2, X3 terhadap Y (simultan dieliminasi per D08). Opsi A: koefisien β regresi berganda + R². Opsi B: path coefficient SEM + R²/Q²/f². Belum beku. |
 | Metode + software | Kuantitatif, kuesioner primer Google Forms — TERKONFIRMASI (Model B Data Primer). Software: Unknown — opsi SPSS regresi berganda vs SmartPLS-SEM (D-level, OPEN) |
 | Target sampel + dasar power | OPEN — N minimum + kaidah power (mis. Green/Cohen atau kaidah PLS) BELUM ditetapkan. DILARANG mengarang angka N. |
-| Eksklusi (apa yang TIDAK diklaim) | Tidak mengklaim efek moderasi/mediasi. Tidak mengklaim kausalitas mutlak dari data cross-sectional. Tidak menggeneralisasi di luar Gen Z Indonesia. Tidak mengklaim versi/patch game tertentu. Tidak mengklaim angka fenomena tanpa sumber T1–T3. |
+| Eksklusi (apa yang TIDAK diklaim) | Tidak mengklaim efek moderasi/mediasi. Tidak mengklaim efek simultan (dieliminasi per D08). Tidak mengklaim kausalitas mutlak dari data cross-sectional. Tidak menggeneralisasi di luar Gen Z Indonesia. Tidak mengklaim versi/patch game tertentu. Tidak mengklaim angka fenomena tanpa sumber T1–T3. |
 | Selesai-jika (completion criteria) | Fase 1 lulus jika: P06 terkunci (definisi Gen Z + kriteria inklusi) + P04 terkunci (software + estimand) + minimal E01–E04 terisi sumber T1–T3 ALIVE (bukan angka karangan). Sampai itu terpenuhi status tetap BELUM LULUS. |
 | Pedoman format kampus | Pedoman Tugas Akhir 2023 SK Dekan 350a — ADOPTED-NEEDS-VERIFY. Margin/font/spasi/sistem sitasi: OPEN sampai cek dokumen asli. |
 | Syarat minimal kampus | OPEN — jumlah halaman minimum, jumlah referensi/jurnal minimum: BELUM DIVERIFIKASI. DILARANG mengarang angka syarat. |
@@ -79,6 +79,8 @@ Legenda status: **VERIFIED** = terbukti dari judul/pernyataan user eksplisit. **
 | D05 | Adopsi kampus/pedoman/pembimbing dari repo referensi: FEB UKRIDA + Pedoman Tugas Akhir 2023 SK Dekan 350a + Dr. Fredella Colline — status ADOPTED-NEEDS-VERIFY | 2026-10-01 | Jawaban user "semua ada di github arthur"; wajib verifikasi dokumen asli sebelum dipakai format/sitasi |
 | D06 | Novelty-risk D02 repo lama dicatat tetapi di-waive: projek ini adalah topik BARU yang independen; repo lama hanya sumber template struktur, bukan sumber klaim | 2026-10-01 | Keputusan user: lanjut projek baru |
 | D07 | SoT v1.0 ini ditetapkan sebagai baseline kanonis perdana (Bagian 2 & 4 Master Directive); perubahan berikutnya via D08+ tanpa menghapus baris lama | 2026-10-01 | Master Directive Bagian 2 & 4: buat file kanonis perdana |
+| D08 | Eliminasi pengujian simultan (H4): Penelitian difokuskan murni pada pengaruh langsung masing-masing variabel prediktor (H1: X1→Y, H2: X2→Y, H3: X3→Y). Rumusan masalah butir 4, tujuan penelitian butir 4, hipotesis H4 simultan, bagan panah simultan Gambar 2.1, serta uji F simultan dihapus dari draf Bab 1, 2, 3 dan naskah proposal. | 2026-10-02 | Permintaan eksplisit user (penyederhanaan fokus riset langsung/parsial) |
+| D09 | Penyesuaian notasi teknis sampel (N = ...) di Bab I menjadi narasi akademik mengalir ('terhadap ... responden'), perapihan elemen cover proposal, serta verifikasi kelengkapan naskah (full-text PDF, SINTA, Open Access gratis tanpa paywall). | 2026-10-02 | Permintaan eksplisit user & audit integritas akademik |
 
 ## 3. Model / Kerangka (frozen verbatim)
 
@@ -99,12 +101,12 @@ PROPOSED (menunggu kunci software P04):
 
 Opsi A (SPSS regresi berganda):
   Y = b0 + b1*X1 + b2*X2 + b3*X3 + e
-  H1: b1 > 0 ; H2: b2 > 0 ; H3: b3 > 0 ; H4 (simultan): R² > 0 signifikan.
+  H1: b1 > 0 ; H2: b2 > 0 ; H3: b3 > 0. (H4 simultan dieliminasi per D08).
   Mean-centering TIDAK relevan untuk model langsung tanpa interaksi.
 
 Opsi B (SmartPLS-SEM):
   Y = p1*X1 + p2*X2 + p3*X3 + e (konstruk laten reflektif, indikator OPEN)
-  H1–H4 analog dalam path coefficient; evaluasi R²/Q²/f² menyusul kunci P04.
+  H1–H3 analog dalam path coefficient; evaluasi R²/Q²/f² menyusul kunci P04.
 
 Hipotesis arah positif di atas adalah PROPOSED dari judul ("Pengaruh ... terhadap ..."),
 bukan temuan. Arah + signifikansi diuji setelah data primer terkumpul.

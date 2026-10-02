@@ -4,6 +4,10 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8')
 
 DOCX_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2.docx")
+DOCX_UPDATED = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2_updated.docx")
+if DOCX_UPDATED.exists():
+    if not DOCX_PATH.exists() or DOCX_UPDATED.stat().st_mtime > DOCX_PATH.stat().st_mtime:
+        DOCX_PATH = DOCX_UPDATED
 PDF_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2.pdf")
 
 errors = []
@@ -26,14 +30,34 @@ check(PDF_PATH.exists() and PDF_PATH.stat().st_size > 100000, f"PDF exists ({PDF
 doc_docx = docx.Document(str(DOCX_PATH))
 doc_pdf = fitz.open(str(PDF_PATH))
 
-# 2. Page 1 (Cover) Identity Verification
-docx_p4 = doc_docx.paragraphs[4].text
+# 2. Page 1 (Cover) Identity & UKRIDA Logo Verification
+docx_cover_text = "\n".join([p.text for p in doc_docx.paragraphs[:8]])
 pdf_p1 = doc_pdf[0].get_text()
 
-check("Nama : Siddharta Pratama Budiono" in docx_p4, "DOCX Cover: 'Nama : Siddharta Pratama Budiono' found")
-check("(NIM : 312023017)" in docx_p4, "DOCX Cover: '(NIM : 312023017)' found")
-check("Nama : Siddharta Pratama Budiono" in pdf_p1, "PDF Cover: 'Nama : Siddharta Pratama Budiono' found")
-check("(NIM : 312023017)" in pdf_p1, "PDF Cover: '(NIM : 312023017)' found")
+check("Siddharta Pratama Budiono" in docx_cover_text, "DOCX Cover: 'Siddharta Pratama Budiono' found")
+check("312023017" in docx_cover_text, "DOCX Cover: '312023017' found")
+check("NIM :" not in docx_cover_text, "DOCX Cover: 'NIM :' eliminated")
+check("Siddharta Pratama Budiono" in pdf_p1, "PDF Cover: 'Siddharta Pratama Budiono' found")
+check("312023017" in pdf_p1, "PDF Cover: '312023017' found")
+check("NIM :" not in pdf_p1, "PDF Cover: 'NIM :' eliminated")
+check("(S.M.)" not in docx_cover_text, "DOCX Cover: '(S.M.)' eliminated")
+check("(S.M.)" not in pdf_p1, "PDF Cover: '(S.M.)' eliminated")
+check("Nama :" not in docx_cover_text, "DOCX Cover: 'Nama :' eliminated")
+check("Nama :" not in pdf_p1, "PDF Cover: 'Nama :' eliminated")
+check("(NIM" not in docx_cover_text, "DOCX Cover: Bracketed '(NIM' eliminated")
+check("(NIM" not in pdf_p1, "PDF Cover: Bracketed '(NIM' eliminated")
+check("KONSENTRASI MANAJEMEN PEMASARAN" not in docx_cover_text, "DOCX Cover: 'KONSENTRASI MANAJEMEN PEMASARAN' eliminated")
+check("KONSENTRASI MANAJEMEN PEMASARAN" not in pdf_p1, "PDF Cover: 'KONSENTRASI MANAJEMEN PEMASARAN' eliminated")
+check("PROGRAM STUDI MANAJEMEN" in docx_cover_text, "DOCX Cover: 'PROGRAM STUDI MANAJEMEN' found without S1")
+check("PROGRAM STUDI MANAJEMEN" in pdf_p1, "PDF Cover: 'PROGRAM STUDI MANAJEMEN' found without S1")
+check("PROGRAM STUDI S1" not in docx_cover_text, "DOCX Cover: 'PROGRAM STUDI S1' eliminated")
+check("PROGRAM STUDI S1" not in pdf_p1, "PDF Cover: 'PROGRAM STUDI S1' eliminated")
+
+# Logo UKRIDA verification on Page 1
+docx_logo_found = len(doc_docx.paragraphs[0]._p.xpath('.//a:blip')) == 1
+pdf_logo_found = len(doc_pdf[0].get_images()) >= 1
+check(docx_logo_found, "DOCX Cover: UKRIDA Logo embedded at paragraph 0")
+check(pdf_logo_found, "PDF Cover: UKRIDA Logo rendered on Page 1")
 
 # 3. Elimination of HALAMAN PERSETUJUAN
 docx_hp_count = sum(1 for p in doc_docx.paragraphs if "HALAMAN PERSETUJUAN" in p.text.upper())
@@ -52,7 +76,7 @@ check(pdf_hp_count == 0, f"PDF: 'HALAMAN PERSETUJUAN' count == 0 (found {pdf_hp_
 
 # 4. Total Page Count of PDF
 total_pages = len(doc_pdf)
-check(total_pages == 35, f"PDF Total Pages == 35 (exact reduction from 36 to {total_pages})")
+check(total_pages == 34, f"PDF Total Pages == 34 (exact reduction from 36 to {total_pages})")
 
 # 5. Right Margin Alignment of TOC, LOT, LOF
 toc_pages = [1, 2, 3] # 0-indexed: Page 2 (DAFTAR ISI), Page 3 (DAFTAR TABEL), Page 4 (DAFTAR GAMBAR)
@@ -97,13 +121,20 @@ pdf_p2_text = doc_pdf[1].get_text()
 pdf_p3_text = doc_pdf[2].get_text()
 pdf_p4_text = doc_pdf[3].get_text()
 pdf_p5_text = doc_pdf[4].get_text()
-pdf_p35_text = doc_pdf[34].get_text()
+pdf_p34_text = doc_pdf[33].get_text()
 
 check("Universitas Kristen Krida Wacana | ii" in pdf_p2_text, "Page 2 Footer: 'Universitas Kristen Krida Wacana | ii'")
 check("Universitas Kristen Krida Wacana | iii" in pdf_p3_text, "Page 3 Footer: 'Universitas Kristen Krida Wacana | iii'")
 check("Universitas Kristen Krida Wacana | iv" in pdf_p4_text, "Page 4 Footer: 'Universitas Kristen Krida Wacana | iv'")
 check("Universitas Kristen Krida Wacana | 1" in pdf_p5_text, "Page 5 Footer: 'Universitas Kristen Krida Wacana | 1'")
-check("Universitas Kristen Krida Wacana | 31" in pdf_p35_text, "Page 35 Footer: 'Universitas Kristen Krida Wacana | 31'")
+check("Universitas Kristen Krida Wacana | 30" in pdf_p34_text, "Page 34 Footer: 'Universitas Kristen Krida Wacana | 30'")
+
+# Check all footers are right-aligned
+check(doc_docx.sections[1].footer.paragraphs[0].alignment == docx.enum.text.WD_ALIGN_PARAGRAPH.RIGHT, "DOCX Section 1 (Frontmatter) Footer is right-aligned")
+check(doc_docx.sections[2].footer.paragraphs[0].alignment == docx.enum.text.WD_ALIGN_PARAGRAPH.RIGHT, "DOCX Section 2 (Main matter) Footer is right-aligned")
+p2_words = [w for w in doc_pdf[1].get_text('words') if w[1] > 750]
+p2_max_x = max(w[2] for w in p2_words) if p2_words else 0
+check(p2_max_x > 450, f"PDF Page 2 Footer right-aligned (ends at {p2_max_x:.1f} pt)")
 
 # 8. Tables and Scientific Parity
 docx_tables = len(doc_docx.tables)
@@ -134,6 +165,26 @@ check(ref_count_docx == 48, f"DOCX DAFTAR PUSTAKA: 48 entries intact (found {ref
 # Check Key Authors in PDF
 key_authors = ["Ajzen, I. (1991)", "Colline", "Winarno", "Ohanian, R. (1990)"]
 check(all(a in pdf_full_text for a in key_authors), "Key bibliographic references found in PDF")
+
+# 9. Verification of Simultaneous Effect (Simultan) & H4 Elimination
+# Bab 1 Rumusan Masalah & Tujuan Penelitian
+docx_full_text = "\n".join([p.text for p in doc_docx.paragraphs])
+check("secara simultan berpengaruh positif terhadap niat bermain" not in docx_full_text, "DOCX: Rumusan/Tujuan simultan eliminated")
+check("secara simultan berpengaruh positif terhadap niat bermain" not in pdf_full_text, "PDF: Rumusan/Tujuan simultan eliminated")
+
+# Bab 2 Hipotesis: H4 eliminated
+check("H4:" not in docx_full_text, "DOCX: 'H4:' eliminated")
+check("H4:" not in pdf_full_text, "PDF: 'H4:' eliminated")
+check("H4 (+)" not in docx_full_text, "DOCX: 'H4 (+)' eliminated")
+check("H4 (+)" not in pdf_full_text, "PDF: 'H4 (+)' eliminated")
+
+# Check H1, H2, H3 intact
+check("H1:" in docx_full_text and "H2:" in docx_full_text and "H3:" in docx_full_text, "DOCX: H1, H2, H3 intact")
+check("H1:" in pdf_full_text and "H2:" in pdf_full_text and "H3:" in pdf_full_text, "PDF: H1, H2, H3 intact")
+
+# Rumusan masalah count in Bab 1: exactly 3 questions
+check("4. Apakah" not in docx_full_text and "4. Apakah" not in pdf_full_text, "Bab 1: 4th question eliminated (only 1, 2, 3)")
+check("4. Untuk menganalisis" not in docx_full_text and "4. Untuk menganalisis" not in pdf_full_text, "Bab 1: 4th objective eliminated (only 1, 2, 3)")
 
 # 9. Final verdict
 print("="*60)

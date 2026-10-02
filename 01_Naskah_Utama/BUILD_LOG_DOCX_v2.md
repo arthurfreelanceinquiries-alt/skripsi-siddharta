@@ -77,7 +77,7 @@ Penyimpangan sadar dari ANATOMI (diperintah tugas / anti-karang, dicatat):
 - TOC: field `TOC \o "1-3"` 1x True; tab dots kanan 14.0cm (7938 dxa) 30 paras -> LULUS; LOT 2 + LOF 1 sinkron.
 - Hyperlink aktif 35 hitam (`000000`, tanpa underline biru) -> LULUS.
 - Tabel APA: Tabel 2.1/3.1 `top/bottom True + F2F2F2 True` -> LULUS; caption 11pt bold + sumber 10pt italic -> LULUS.
-- Gambar 2.1: `14.00x6.24cm center` (Bentuk Elips / Ellipse untuk variabel X1, X2, X3, Y dengan tipografi besar dan jelas: 16pt bold kode, 12.5pt italic nama variabel, panah H1-H3 presisi matematis border-to-border, H4 simultan 12.5pt italic) + caption + sumber 2026 -> LULUS.
+- Gambar 2.1: `14.00x6.24cm center` (Bentuk Elips / Ellipse untuk variabel X1, X2, X3, Y dengan tipografi besar dan jelas: 16pt bold kode, 12.5pt italic nama variabel, panah H1-H3 presisi matematis border-to-border, H4 simultan dieliminasi per D08) + caption + sumber 2026 -> LULUS.
 - Persamaan: 2 display center + nomor kanan `7938` tanpa dots + subscript Unicode italic -> LULUS.
 - Footer: sec0 tanpa PAGE, sec1/2 `PAGE fldChar True` + `UKRIDA | ii/1` (10pt bold; center/romawi start2, right/arab start1) -> LULUS.
 - Pustaka: 48 entri, 0 bernomor, hanging `1.2506/-1.2506 justify 1.15` -> LULUS; alfabetis setia sumber.

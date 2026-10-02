@@ -11,13 +11,13 @@
 | V-T01 | Teori X1: Ohanian (1990) 3 dimensi | VERIFIED-struktur | KONSTRUK_SKALA.md §2, §8 |
 | V-T02 | Teori X2 inti: Bambauer-Sachse dan Mangold (2011); sub-dimensi Park dan Lee (2008); Cheung *et al.* (2008, 2009); Fan *et al.* (2013) | VERIFIED-konstruk; PROPOSED-ITEMSET untuk gabungan | KONSTRUK_SKALA.md §3, §8 |
 | V-T03 | Teori X3: Venkatesh (2000); Venkatesh dan Bala (2008); Davis *et al.* (1992); van der Heijden (2004) | VERIFIED-definisi dan struktur | KONSTRUK_SKALA.md §4, §8 |
-| V-T04 | Teori Y: Ajzen (1991 + panduan UMass); Venkatesh *et al.* (2003); Hsu dan Lu (2004) | VERIFIED-konstruk; ADAPTED-redaksi | KONSTRUK_SKALA.md §5, §8 |
-| V-S01–S09, S11–S18 | 17 studi primer S01–S09, S11–S18 | VERIFIED judul+jurnal+tahun+DOI/URL hidup | LITERATURE_MATRIX.md §1–§4, §8 |
+| V-T04 | Teori Y: Ajzen (1991 dan panduan UMass); Venkatesh *et al.* (2003); Hsu dan Lu (2004) | VERIFIED-konstruk; ADAPTED-redaksi | KONSTRUK_SKALA.md §5, §8 |
+| V-S01–S09, S11–S18 | 17 studi primer S01–S09, S11–S18 | VERIFIED judul, jurnal, tahun, dan DOI/URL hidup | LITERATURE_MATRIX.md §1–§4, §8 |
 | V-S10parsial | S10 Sastri dan Harsoyo (2023) | VERIFIED parsial; DOI: UNVERIFIED | LITERATURE_MATRIX.md §2 S10 |
 | V-SFEB | Colline *et al.* (2024) | VERIFIED; relevansi TERBATAS (bukan bukti gaming) | LITERATURE_MATRIX.md §5 |
-| P-H14 | H1–H4 arah positif sebagai proposisi uji | PROPOSED (diuji, bukan temuan) | PEDOMAN §2.6; LITERATURE_MATRIX §6 |
+| P-H13 | H1–H3 arah positif sebagai proposisi uji | PROPOSED (diuji, bukan temuan) | PEDOMAN §2.6; LITERATURE_MATRIX §6 |
 | P-BAGAN | Bagan X1,X2,X3→Y | PROPOSED direct-effect, tanpa mediator/moderator | PEDOMAN §2.7 |
-| OPEN-ACUAN | Kecukupan ≥20 acuan + sitasi dosen FEB | OPEN-dipenuhi parsial di draf; wajib dilengkapi full-text | Pedoman [L118], [L64], [L66], [L626] |
+| OPEN-ACUAN | Kecukupan ≥20 acuan dan sitasi dosen FEB | OPEN-dipenuhi parsial di draf; wajib dilengkapi full-text | Pedoman [L118], [L64], [L66], [L626] |
 
 ---
 
@@ -67,26 +67,26 @@ Tabel berikut merangkum 18 studi primer terverifikasi menurut jalur. Arah hanya 
 
 | Kode | Studi (bukti) | Jalur | Pola temuan (tanpa angka) | Peran: A pendukung / B pembatas |
 |---|---|---|---|---|
-| S01 | Octaviani dan Hartono (2023), Indonesia, N=180 | Kredibilitas + infotainment → nilai iklan → intensi | Positif-signifikan via nilai iklan | A |
-| S02 | Weismueller *et al.* (2020), Jerman, N=306 | Kredibilitas 3 dimensi; disclosure; pengikut → intensi | Positif-signifikan; disclosure hanya tak langsung via daya tarik | A + mekanisme |
-| S03 | Bevan-Dye dan Motaung (2023), Afrika Selatan, N=334 | Nilai informasi + hiburan + kepercayaan → utilitas → predisposisi → intensi | Positif-signifikan | A generasi muda |
+| S01 | Octaviani dan Hartono (2023), Indonesia, N=180 | Kredibilitas dan infotainment → nilai iklan → intensi | Positif-signifikan via nilai iklan | A |
+| S02 | Weismueller *et al.* (2020), Jerman, N=306 | Kredibilitas 3 dimensi; disclosure; pengikut → intensi | Positif-signifikan; disclosure hanya tak langsung via daya tarik | A, dengan mekanisme |
+| S03 | Bevan-Dye dan Motaung (2023), Afrika Selatan, N=334 | Nilai informasi, hiburan, dan kepercayaan → utilitas → predisposisi → intensi | Positif-signifikan | A generasi muda |
 | S04 | Putri dan Tiarawati (2021), Indonesia, N=211 | *Influencer* dan citra merek → intensi daring | *Influencer* tidak signifikan; citra merek signifikan | B kontra X1 |
 | S05 | Maghfiroh *et al.* (2025), Indonesia, N=290 | Kredibilitas dan konten persuasif → intensi langsung dan via sikap | Langsung tidak signifikan; tak langsung via sikap signifikan (mediasi penuh) | B kontra langsung |
-| S06 | Rahaman *et al.* (2022), Bangladesh, N=432 | Kualitas + kredibilitas *eWOM* → kemudahan + kebermanfaatan → adopsi → intensi | Positif-signifikan | A IAM+TAM |
-| S07 | Leong *et al.* (2022), Malaysia, N=222 | Kualitas + kredibilitas + kesesuaian tugas + sikap → kebermanfaatan → adopsi → intensi; kebutuhan informasi tidak signifikan | Positif-signifikan dengan satu anteseden tidak signifikan | A dengan catatan |
-| S08 | Ngo *et al.* (2024), Vietnam Gen Z, N=280 | Kualitas + kuantitas + kebutuhan + sikap → kebermanfaatan/adopsi → intensi; kredibilitas tidak signifikan | Campuran/parsial; kunci Gen Z | B kontra parsial |
+| S06 | Rahaman *et al.* (2022), Bangladesh, N=432 | Kualitas dan kredibilitas *eWOM* → kemudahan dan kebermanfaatan → adopsi → intensi | Positif-signifikan | A IAM dan TAM |
+| S07 | Leong *et al.* (2022), Malaysia, N=222 | Kualitas, kredibilitas, kesesuaian tugas, dan sikap → kebermanfaatan → adopsi → intensi; kebutuhan informasi tidak signifikan | Positif-signifikan dengan satu anteseden tidak signifikan | A dengan catatan |
+| S08 | Ngo *et al.* (2024), Vietnam Gen Z, N=280 | Kualitas, kuantitas, kebutuhan, dan sikap → kebermanfaatan/adopsi → intensi; kredibilitas tidak signifikan | Campuran/parsial; kunci Gen Z | B kontra parsial |
 | S09 | Winarno dan Indrawati (2022), Indonesia, N=300 | Pemasaran media sosial → *eWOM* → intensi | Positif-signifikan langsung dan tak langsung | A Indonesia |
 | S10 | Sastri dan Harsoyo (2023), Indonesia, N=100 | *eWOM*, kualitas, pemasaran media sosial → keputusan pembelian | *eWOM* tidak signifikan; pembanding signifikan; DOI UNVERIFIED | B niat vs keputusan |
-| S11 | Pérez de Prado *et al.* (2021), India, N=304 | TAM gim: kebermanfaatan, sikap, *flow*, kenikmatan, kemudahan → intensi | Kenikmatan tidak signifikan ke kebermanfaatan/sikap; kebermanfaatan + sikap + *flow* signifikan | B kontra parsial X3 |
-| S12 | Bongso dan Dewi (2021), Indonesia gim Kota Kita, N=100 | *Flow*, kenikmatan, ekspektasi, pengaruh sosial, fasilitas → intensi | Kenikmatan, sosial, fasilitas signifikan; *flow* dan ekspektasi tidak signifikan | A X3 + kontra pembanding |
+| S11 | Pérez de Prado *et al.* (2021), India, N=304 | TAM gim: kebermanfaatan, sikap, *flow*, kenikmatan, kemudahan → intensi | Kenikmatan tidak signifikan ke kebermanfaatan/sikap; kebermanfaatan, sikap, dan *flow* signifikan | B kontra parsial X3 |
+| S12 | Bongso dan Dewi (2021), Indonesia gim Kota Kita, N=100 | *Flow*, kenikmatan, ekspektasi, pengaruh sosial, fasilitas → intensi | Kenikmatan, sosial, fasilitas signifikan; *flow* dan ekspektasi tidak signifikan | A X3, dengan kontra pembanding |
 | S13 | Kurnia dan Sukarnadi (2023), Indonesia, N tidak diklaim | Estetika, kemudahan, tantangan, variasi, kebaruan, interaktivitas → kenikmatan → kontinuitas | Positif-signifikan; interaktivitas dominan arah | A anteseden, dekat MLBB |
-| S14 | Dewi (2022), Indonesia PUBG Gen Z, N=223 | Kemudahan + kebermanfaatan + sikap + kenikmatan → *intention to play* | Positif-signifikan keempatnya | A pembanding genre terdekat |
-| S15 | Gultom *et al.* (2020), Indonesia, N=205 | Kemudahan main, desain, sosial → kenikmatan → kontinuitas | Kenikmatan signifikan kuat; anteseden campuran | A + nuansa kontra anteseden |
-| S16 | Ranti dan Setiyaningrum (2022), Indonesia, N=100 | *eWOM* → intensi langsung dan via sikap merek + citra | Positif-signifikan langsung dan tak langsung | Pembanding mediasi ganda |
+| S14 | Dewi (2022), Indonesia PUBG Gen Z, N=223 | Kemudahan, kebermanfaatan, sikap, dan kenikmatan → *intention to play* | Positif-signifikan keempatnya | A pembanding genre terdekat |
+| S15 | Gultom *et al.* (2020), Indonesia, N=205 | Kemudahan main, desain, sosial → kenikmatan → kontinuitas | Kenikmatan signifikan kuat; anteseden campuran | A, dengan nuansa kontra anteseden |
+| S16 | Ranti dan Setiyaningrum (2022), Indonesia, N=100 | *eWOM* → intensi langsung dan via sikap merek dan citra | Positif-signifikan langsung dan tak langsung | Pembanding mediasi ganda |
 | S17 | Khwaja *et al.* (2020), N=342 | Kualitas, kebermanfaatan, risiko, kualitas argumen → kepercayaan → adopsi → intensi | Positif-signifikan berjenjang | Pembanding rantai trust–adopsi |
 | S18 | Dyego dan Oktavianti (2020), Indonesia Jakarta, N=100 | *eWOM* → intensi pembelian | Positif kuat; objek otomotif, bukan gim | Pembanding efek langsung |
 
-Karya dosen FEB UKRIDA yang terverifikasi adalah Colline *et al.* (2024) pada investor muda Indonesia (N=344): kecanggihan investor dan *return* berpengaruh positif-signifikan terhadap kepuasan, sedangkan pengaruh media sosial hanya tak langsung via *return* (mediasi penuh). Relevansinya dinyatakan TERBATAS: kedekatan hanya tematik (pengaruh sosial dan subjek muda), bukan bukti *influencer marketing*, *eWOM*, maupun kenikmatan menuju *intention to play* gim. Karya tersebut dipakai sebagai rujukan tematik generasi muda dan pola mediasi penuh, bukan sebagai landasan utama hipotesis gim. Karya pemasaran FEB yang relevan langsung dengan gim masih TERBUKA dan perlu ditambahkan bila ditemukan.
+Karya dosen FEB UKRIDA yang terverifikasi adalah Colline *et al.* (2024) terhadap 344 investor muda di Indonesia: kecanggihan investor dan *return* berpengaruh positif-signifikan terhadap kepuasan, sedangkan pengaruh media sosial hanya tak langsung via *return* (mediasi penuh). Relevansinya dinyatakan TERBATAS: kedekatan hanya tematik (pengaruh sosial dan subjek muda), bukan bukti *influencer marketing*, *eWOM*, maupun kenikmatan menuju *intention to play* gim. Karya tersebut dipakai sebagai rujukan tematik generasi muda dan pola mediasi penuh, bukan sebagai landasan utama hipotesis gim. Karya pemasaran FEB yang relevan langsung dengan gim masih TERBUKA dan perlu ditambahkan bila ditemukan.
 
 Pola lintas jalur: pengaruh langsung X→Y kerap pecah. X1 pecah oleh sikap, nilai iklan, dan citra merek; X2 pecah oleh kebermanfaatan, adopsi, dan kepercayaan serta perbedaan niat versus keputusan; X3 pecah oleh anteseden gim dan perbedaan hedonik versus utilitarian. Celah tersebut membenarkan model integratif tiga X pada satu Y yang sama, bukan tiga regresi terpisah tanpa mekanisme.
 
@@ -108,34 +108,29 @@ H3 — *Perceived enjoyment* terhadap *intention to play*. Studi pendukung menun
 
 H3: Variabel X3 (*perceived enjoyment*) berpengaruh positif terhadap variabel Y (*intention to play* Mobile Legends).
 
-H4 — Pengaruh simultan. Ketiga pendorong diuji bersama pada satu Y yang sama karena pola lintas jalur menunjukkan ketiganya saling melengkapi: persuasif (X1), informasional (X2), dan hedonik (X3). Bukti simultan pada gim lokal (S12) serta rantai anteseden kenikmatan (S13, S15) memberi dasar bahwa model gabungan lebih informatif daripada tiga regresi terpisah. Pernyataan uji:
+Seluruh hipotesis berstatus proposisi uji arah positif (H1: b1 > 0, H2: b2 > 0, H3: b3 > 0). Pembuktian menunggu Bab III–IV (uji validitas, reliabilitas, asumsi klasik, dan uji hipotesis dengan perangkat lunak bernama).
 
-H4: Variabel X1, X2, dan X3 secara simultan berpengaruh positif terhadap variabel Y (*intention to play* Mobile Legends).
-
-Seluruh hipotesis berstatus proposisi uji dua sisi arah positif (b1>0, b2>0, b3>0; simultan signifikan). Pembuktian menunggu Bab III–IV (uji validitas, reliabilitas, asumsi klasik, dan uji hipotesis dengan perangkat lunak bernama).
-
-Status verifikasi 2.3: format H1–H4 mengikuti template wajib H: X berpengaruh positif terhadap Y. Uraian studi relevan mendahului setiap pernyataan. Tidak ada klaim signifikansi, besaran pengaruh, maupun mediasi yang diuji pada studi ini. S10 disitir dengan label DOI UNVERIFIED.
+Status verifikasi 2.3: format H1–H3 mengikuti template wajib H: X berpengaruh positif terhadap Y. Uraian studi relevan mendahului setiap pernyataan. Tidak ada klaim signifikansi, besaran pengaruh, maupun mediasi yang diuji pada studi ini. S10 disitir dengan label DOI UNVERIFIED.
 
 ## 2.4 Rerangka Penelitian
 
 Rerangka berupa bagan hubungan antarvariabel termasuk hipotesisnya, tanpa mediator maupun moderator (model pengaruh langsung).
 
 ```text
-X1 (Influencer Marketing                 H1 (+)
+X1 (Influencer Marketing                 H1 (positif)
      kredibilitas: expertise,            ──────────┐
      trustworthiness, attractiveness)              │
                                                    ├──→ Y (Intention to Play
-X2 (eWOM: perilaku/kualitas               H2 (+)       Mobile Legends)
+X2 (eWOM: perilaku/kualitas               H2 (positif)       Mobile Legends)
      ulasan, adopsi informasi)           ──────────┤     Populasi: Generasi Z
                                                    │     (Indonesia)
-X3 (Perceived Enjoyment:                 H3 (+)    │
+X3 (Perceived Enjoyment:                 H3 (positif)    │
      kesenangan intrinsik bermain)       ──────────┘
-              └──────── H4 (simultan X1,X2,X3 → Y) ───────┘
 ```
 
-Deskripsi: X1 memotret sisi persuasif (apakah *influencer* dipersepsi ahli, jujur, dan menarik); X2 memotret sisi informasional (apakah ulasan komunitas dibaca, dinilai berkualitas, dan diadopsi); X3 memotret sisi hedonik (apakah bermain itu sendiri menyenangkan). Ketiganya diduga menggerakkan Y, yaitu niat memainkan kembali Mobile Legends dalam horizon waktu yang sama pada seluruh butir (prinsip TACT). H1–H3 menguji pengaruh parsial masing-masing X terhadap Y; H4 menguji pengaruh simultan ketiganya terhadap Y. Mediasi melalui sikap, nilai iklan, kebermanfaatan, adopsi, atau kepercayaan dicatat sebagai agenda pengembangan (merujuk S05, S01, S06–S08, S17), bukan sebagai jalur yang diuji pada model usulan.
+Deskripsi: X1 memotret sisi persuasif (apakah *influencer* dipersepsi ahli, jujur, dan menarik); X2 memotret sisi informasional (apakah ulasan komunitas dibaca, dinilai berkualitas, dan diadopsi); X3 memotret sisi hedonik (apakah bermain itu sendiri menyenangkan). Ketiganya diduga menggerakkan Y, yaitu niat memainkan kembali Mobile Legends dalam horizon waktu yang sama pada seluruh butir (prinsip TACT). H1–H3 menguji pengaruh masing-masing variabel independen (X1, X2, X3) secara langsung terhadap variabel dependen (Y). Mediasi melalui sikap, nilai iklan, kebermanfaatan, adopsi, atau kepercayaan dicatat sebagai agenda pengembangan (merujuk S05, S01, S06–S08, S17), bukan sebagai jalur yang diuji pada model usulan.
 
-Status verifikasi 2.4: bagan berstatus PROPOSED direct-effect dan konsisten dengan H1–H4 serta persamaan Bab III (Opsi A regresi atau Opsi B SEM, menunggu kunci pembimbing). Tidak ada variabel, panah, maupun interaksi tambahan yang diklaim.
+Status verifikasi 2.4: bagan berstatus PROPOSED direct-effect dan konsisten dengan H1–H3 serta persamaan Bab III (Opsi A regresi atau Opsi B SEM, menunggu kunci pembimbing). Tidak ada variabel, panah, maupun interaksi tambahan yang diklaim.
 
 ---
 
@@ -145,8 +140,8 @@ Kebutuhan pedoman: minimal 20 acuan; bahan berupa artikel jurnal, tesis, atau di
 
 Daftar sementara (format APA ringkas; DOI/URL lengkap merujuk LITERATURE_MATRIX.md §8 dan KONSTRUK_SKALA.md §8, tidak disalin ulang untuk menghindari salah kutip):
 
-Teori inti: Ohanian (1990); Ajzen (1991) + panduan TPB UMass; Venkatesh (2000); Venkatesh dan Bala (2008); Venkatesh *et al.* (2003); Davis *et al.* (1992); van der Heijden (2004); Hsu dan Lu (2004); Bambauer-Sachse dan Mangold (2011); Fan *et al.* (2013); Park dan Lee (2008); Cheung *et al.* (2008).
+Teori inti: Ohanian (1990); Ajzen (1991) dan panduan TPB UMass; Venkatesh (2000); Venkatesh dan Bala (2008); Venkatesh *et al.* (2003); Davis *et al.* (1992); van der Heijden (2004); Hsu dan Lu (2004); Bambauer-Sachse dan Mangold (2011); Fan *et al.* (2013); Park dan Lee (2008); Cheung *et al.* (2008).
 
 Studi primer: Octaviani dan Hartono (2023) [S01]; Weismueller *et al.* (2020) [S02]; Bevan-Dye dan Motaung (2023) [S03]; Putri dan Tiarawati (2021) [S04]; Maghfiroh *et al.* (2025) [S05]; Rahaman *et al.* (2022) [S06]; Leong *et al.* (2022) [S07]; Ngo *et al.* (2024) [S08]; Winarno dan Indrawati (2022) [S09]; Sastri dan Harsoyo (2023) [S10, DOI UNVERIFIED]; Pérez de Prado *et al.* (2021) [S11, penulis lengkap UNVERIFIED-rinci]; Bongso dan Dewi (2021) [S12]; Kurnia dan Sukarnadi (2023) [S13, N tidak diklaim]; Dewi (2022) [S14]; Gultom *et al.* (2020) [S15]; Ranti dan Setiyaningrum (2022) [S16]; Khwaja *et al.* (2020) [S17]; Dyego dan Oktavianti (2020) [S18].
 
-Karya FEB UKRIDA: Colline *et al.* (2024) [S-FEB, relevansi terbatas, tematik generasi muda + pengaruh sosial].
+Karya FEB UKRIDA: Colline *et al.* (2024) [S-FEB, relevansi terbatas, tematik generasi muda dan pengaruh sosial].

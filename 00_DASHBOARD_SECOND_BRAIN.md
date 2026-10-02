@@ -31,7 +31,7 @@ SoT v1.0 = baseline, bukan kelulusan F1.
 
 - **Verified (dari judul):** Y=Intention to Play; X1=Influencer Marketing; X2=eWOM; X3=Perceived Enjoyment; Objek=Mobile Legends; Populasi=Gen Z; Model langsung tanpa moderasi/mediasi.
 - **Terkonfirmasi user:** Konsentrasi Pemasaran; Lokasi Indonesia nasional; Metode kuantitatif primer Google Forms.
-- **Proposed:** Spesifikasi direct-effects (regresi vs SEM menunggu software); arah hipotesis positif (H1–H4) sebagai proposisi uji, bukan temuan.
+- **Proposed:** Spesifikasi direct-effects (regresi vs SEM menunggu software); arah hipotesis positif (H1–H3) sebagai proposisi uji, bukan temuan.
 - **Open/Unknown (dilarang dikarang):** Software, definisi Gen Z + kriteria sampel, target N, fenomena empiris, deadline, syarat minimal kampus, skala baku, URL/DOI/angka/jurnal.
 
 ## 5. Next Actions (berurutan, tanpa fabrikasi)

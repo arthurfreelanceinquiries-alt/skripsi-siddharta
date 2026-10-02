@@ -13,6 +13,10 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 DOCX_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.docx"
+DOCX_UPDATED = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2_updated.docx"
+if Path(DOCX_UPDATED).exists():
+    if not Path(DOCX_PATH).exists() or Path(DOCX_UPDATED).stat().st_mtime > Path(DOCX_PATH).stat().st_mtime:
+        DOCX_PATH = DOCX_UPDATED
 PDF_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.pdf"
 FIG_PATH = r"C:\Users\Arthur Reezan\AppData\Local\Temp\opencode\fig_v2.png"
 if not Path(FIG_PATH).exists():
@@ -251,7 +255,7 @@ def front_footer(canvas, doc):
     canvas.setFillColor(colors.black)
     roman = int_to_roman(canvas.getPageNumber())
     txt = f'Universitas Kristen Krida Wacana | {roman}'
-    canvas.drawCentredString(A4[0]/2, 36, txt)
+    canvas.drawRightString(A4[0]-3*cm, 36, txt)
     canvas.restoreState()
 def main_footer(canvas, doc):
     canvas.saveState()
@@ -288,8 +292,8 @@ sect_idx=0
 def last_is_break():
     return len(story)>0 and isinstance(story[-1], PageBreak)
 
-# Need to handle cover spacings: paras 0-5 have specific before/after
-cover_bef_aft = {0:(6,18),1:(12,24),2:(18,0),3:(0,24),4:(24,36),5:(48,0)}
+# Need to handle cover spacings: paras 1-6 have specific before/after (p0 is logo)
+cover_bef_aft = {1:(6,18),2:(12,24),3:(18,0),4:(0,24),5:(24,36),6:(48,0)}
 
 for child in d.element.body.iterchildren():
     tag=child.tag.split('}')[-1]
@@ -329,13 +333,20 @@ for child in d.element.body.iterchildren():
         # empty para handling
         if txt.strip()=='':
             if has_drawing:
-                # image para 127
-                # insert image 14cm width
                 try:
-                    img = Image(FIG_PATH, width=14*cm, height=5.93*cm)
-                    img.hAlign='CENTER'
-                    story.append(img)
-                    story.append(Spacer(1,6))
+                    if idx == 0:
+                        logo_pdf_path = Path(r"01_Naskah_Utama/images/ukrida_pentagram.png")
+                        if not logo_pdf_path.exists():
+                            logo_pdf_path = Path(r"01_Naskah_Utama/images/Logo_UKRIDA_300x300.png")
+                        img = Image(str(logo_pdf_path), width=3.2*cm, height=3.2*cm)
+                        img.hAlign='CENTER'
+                        story.append(img)
+                        story.append(Spacer(1, 18))
+                    else:
+                        img = Image(FIG_PATH, width=14*cm, height=5.93*cm)
+                        img.hAlign='CENTER'
+                        story.append(img)
+                        story.append(Spacer(1,6))
                 except Exception as e:
                     print('img fail', e)
                 continue
@@ -425,8 +436,8 @@ for child in d.element.body.iterchildren():
                     if r.font.size:
                         sizes.append(r.font.size.pt)
             max_sz = max(sizes) if sizes else 12
-            # Cover paras 0-5
-            if idx<=5:
+            # Cover paras 1-6
+            if 1 <= idx <= 6:
                 bef,aft = cover_bef_aft.get(idx,(0,0))
                 # choose 14 vs 12
                 if max_sz>=13.5:

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Launcher Prompt Awal Sesi — Skripsi Siddharta FEB UKRIDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --bg-card-hover: rgba(31, 41, 55, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(99, 102, 241, 0.4);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.25);
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.2);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --code-bg: #070a12;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(6, 182, 212, 0.1) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .badge-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-primary {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .badge-accent {
+      background: rgba(6, 182, 212, 0.15);
+      color: #67e8f9;
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.15);
+      color: #6ee7b7;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    /* Key Meta Grid */
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .meta-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      backdrop-filter: blur(12px);
+      transition: all 0.2s ease;
+    }
+
+    .meta-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .meta-value.accent {
+      color: #818cf8;
+    }
+
+    /* Navigation Tabs */
+    .tabs-wrapper {
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(17, 24, 39, 0.8);
+      padding: 0.4rem;
+      border-radius: 0.85rem;
+      border: 1px solid var(--border-color);
+      width: max-content;
+      min-width: 100%;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.6rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    /* Prompt Display Card */
+    .prompt-card {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(16px);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .prompt-card.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-header {
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .card-title-group h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .copy-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, #4338ca 100%);
+      color: white;
+      border: none;
+      padding: 0.65rem 1.4rem;
+      border-radius: 0.65rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px var(--primary-glow);
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .copy-btn:active {
+      transform: translateY(0);
+    }
+
+    .copy-btn.copied {
+      background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+
+    .prompt-body {
+      padding: 1.5rem;
+      background: var(--code-bg);
+      position: relative;
+    }
+
+    .prompt-code {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.7;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 0.75rem;
+    }
+
+    .prompt-code::-webkit-scrollbar {
+      width: 6px;
+    }
+    .prompt-code::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+    }
+
+    .card-footer {
+      padding: 1rem 1.75rem;
+      background: rgba(17, 24, 39, 0.9);
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Accordion / Cheat Sheet Section */
+    .cheatsheet-section {
+      margin-top: 3rem;
+    }
+
+    .accordion-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem 1.75rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+
+    .accordion-header:hover {
+      border-color: var(--border-active);
+    }
+
+    .accordion-header h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .accordion-arrow {
+      transition: transform 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .accordion-header.active .accordion-arrow {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-top: none;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      overflow-x: auto;
+    }
+
+    .table-custom {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .table-custom th, .table-custom td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .table-custom th {
+      background: rgba(255, 255, 255, 0.03);
+      color: #a5b4fc;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .table-custom tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #1e1b4b;
+      color: #e0e7ff;
+      border: 1px solid #4338ca;
+      padding: 0.85rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo-container" style="margin-bottom: 1.25rem; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 0.5rem;">
+        <img src="01_Naskah_Utama/images/ukrida_pentagram.svg" alt="Logo Resmi UKRIDA" style="width: 90px; height: 90px; filter: drop-shadow(0 4px 20px rgba(99, 102, 241, 0.4)); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1.0)'">
+        <div style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: #cbd5e1; text-transform: uppercase;">Universitas Kristen Krida Wacana</div>
+      </div>
+      <div class="badge-wrap">
+        <span class="badge badge-primary">🏛️ FEB UKRIDA</span>
+        <span class="badge badge-accent">📊 Manajemen Pemasaran</span>
+        <span class="badge badge-success">✨ Second Brain v1.0</span>
+      </div>
+      <h1>Launcher Prompt Awal Sesi</h1>
+      <p class="subtitle">
+        Kumpulan prompt pembuka sesi riset skripsi otomatis untuk Antigravity IDE, Claude, atau ChatGPT. Dirancang anti-halusinasi dan patuh 100% pada Pedoman UKRIDA 2023.
+      </p>
+    </header>
+
+    <!-- Key Metadata Overview -->
+    <div class="meta-grid">
+      <div class="meta-card">
+        <div class="meta-label">Mahasiswa & NIM</div>
+        <div class="meta-value">Siddharta Pratama Budiono</div>
+        <div class="meta-value accent" style="font-size: 0.85rem; font-family: var(--font-mono); margin-top:2px;">NIM: 312023017</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Dosen Pembimbing</div>
+        <div class="meta-value">Dr. Fredella Colline</div>
+        <div class="meta-value" style="font-size: 0.82rem; color: var(--text-dim);">FEB Universitas Kristen Krida Wacana</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Model Penelitian</div>
+        <div class="meta-value">X1, X2, X3 → Y (Direct Effects)</div>
+        <div class="meta-value" style="font-size: 0.82rem; color: var(--text-dim);">Mobile Legends • Generasi Z</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Pedoman & Layout</div>
+        <div class="meta-value">SK Dekan No. 350a (2023)</div>
+        <div class="meta-value" style="font-size: 0.82rem; color: #10b981;">Margin 4-3-3-3 cm • APA 7th</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-wrapper">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" id="tab-master" onclick="switchTab('master')">
+          🚀 1. Master Prompt (Lengkap)
+        </button>
+        <button class="tab-btn" id="tab-fast" onclick="switchTab('fast')">
+          ⚡ 2. Fast Kickoff (IDE)
+        </button>
+        <button class="tab-btn" id="tab-revisi" onclick="switchTab('revisi')">
+          👩‍🏫 3. Revisi Pembimbing
+        </button>
+        <button class="tab-btn" id="tab-pustaka" onclick="switchTab('pustaka')">
+          📚 4. Pustaka & Skala Ukur
+        </button>
+        <button class="tab-btn" id="tab-build" onclick="switchTab('build')">
+          🛠️ 5. Build & Audit DOCX/PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- PROMPT 1: MASTER PROMPT -->
+    <div class="prompt-card active" id="card-master">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2>🚀 Master Prompt Awal Sesi</h2>
+          <p>Rekomendasi utama: Memuat seluruh parameter kanon, protokol pre-flight sync, dan batasan anti-halusinasi.</p>
+        </div>
+        <button class="copy-btn" id="btn-copy-master" onclick="copyPrompt('code-master', 'btn-copy-master')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="prompt-body">
+        <pre class="prompt-code" id="code-master">Kamu adalah AI Co-Researcher dan Research Assistant pribadi untuk proyek Skripsi S1 Manajemen (Konsentrasi Pemasaran) FEB UKRIDA atas nama:
+- Nama Mahasiswa   : Siddharta Pratama Budiono (NIM: 312023017)
+- Dosen Pembimbing : Dr. Fredella Colline
+- Pedoman Format   : Pedoman Tugas Akhir 2023 FEB UKRIDA (SK Dekan No. 350a/UKKW/FE/KP/VII/2023)
+- Judul Skripsi    : "Pengaruh Influencer Marketing, Electronic Word-Of-Mouth, dan Perceived Enjoyment terhadap Intention To Play Mobile Legends pada Generasi Z"
+- Kerangka Model   : X1 (Influencer Marketing), X2 (eWOM), X3 (Perceived Enjoyment) -> Y (Intention to Play Mobile Legends), Populasi: Generasi Z Indonesia (Model Pengaruh Langsung).
+
+SEBELUM MEMULAI KERJA APA PUN PADA SESI INI, JALANKAN PROTOKOL PRE-FLIGHT BERIKUT SECARA BERURUTAN:
+
+1. [PRE-FLIGHT SYNC & PEMERIKSAAN KANON]
+   - Periksa status Git repositori (pastikan sinkron dengan branch main).
+   - Baca dan pahami status kanonis dari file-file berikut:
+     * `00_DASHBOARD_SECOND_BRAIN.md` (status Gate F1–F4, open questions OQ1–OQ5).
+     * `04_Riset_&_Metodologi/SOURCE_OF_TRUTH.md` (parameter beku V01–V07, parameter P01–P08, riwayat keputusan D01–D07, dan status Ledger E01–E04).
+     * `04_Riset_&_Metodologi/LOG_SESI_SECOND_BRAIN.md` (catatan capaian sesi sebelumnya).
+   - Periksa artefak naskah aktif di folder `01_Naskah_Utama/`:
+     * Dokumen rujukan: `Proposal_Skripsi_MLBB_GenZ_v2.docx` & `Proposal_Skripsi_MLBB_GenZ_v2.pdf` (35 halaman terverifikasi).
+     * Draf sumber: `BAB_I_DRAF.md`, `BAB_II_DRAF.md`, `BAB_III_DRAF.md`, `DAFTAR_PUSTAKA_SEMENTARA.md`.
+
+2. [BATASAN KERAS & INTEGRITAS AKADEMIK (INVIOLABLE)]
+   - DILARANG MENGARANG (ZERO HALLUCINATION): Dilarang membuat URL palsu, DOI karangan, angka statistik tanpa sumber resmi T1–T3 ALIVE, atau ghost citations. Hal-hal yang belum terverifikasi wajib diberi label [OPEN] atau [MENUNGGU VERIFIKASI].
+   - 3-LAYER ARCHITECTURE:
+     * Layer 1 (Directive): Patuhi SOP di `directives/*.md`.
+     * Layer 2 (Orchestration): Perencanaan tugas sistematis sebelum eksekusi.
+     * Layer 3 (Execution): Eksekusi teknis deterministik via skrip Python di `execution/` atau `scratch/`.
+   - STANDAR FORMAT UKRIDA & PUBLIKASI: Margin 4-3-3-3 cm, Times New Roman 12pt, Spasi 1.5, First Line Indent 1.25 cm, Gaya Sitasi APA 7th Edition (parentetik "&", naratif "dan", istilah asing miring/italic), bebas raw LaTeX dalam DOCX, dan bebas watermarking / pola AI klise.
+   - PENCATATAN KANONIK: Setiap keputusan metodologis baru wajib dicatat sebagai D-log baru di `SOURCE_OF_TRUTH.md` dan dicatat di `LOG_SESI_SECOND_BRAIN.md` di akhir sesi.
+
+3. [LAPORAN AWAL SESI]
+   Setelah membaca file di atas, berikan respons pembuka yang ringkas:
+   a. Status sinkronisasi & versi dokumen naskah terakhir.
+   b. Status Fase Riset (Gate) saat ini dan item [OPEN] prioritas yang siap diselesaikan.
+   c. Nyatakan kesiapanmu dan tanyakan apa fokus tugas yang ingin kita selesaikan hari ini.</pre>
+      </div>
+      <div class="card-footer">
+        <span>💡 <strong>Target Hasil:</strong> Membuka sesi baru dengan context alignment sempurna & zero amnesia.</span>
+        <span>Kepatuhan: Pedoman 2023</span>
+      </div>
+    </div>
+
+    <!-- PROMPT 2: FAST KICKOFF -->
+    <div class="prompt-card" id="card-fast">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2>⚡ Fast Kickoff (Antigravity IDE Native)</h2>
+          <p>Prompt ringkas efisien untuk IDE yang sudah membaca file rule <code>.agents/rules/</code> secara otomatis.</p>
+        </div>
+        <button class="copy-btn" id="btn-copy-fast" onclick="copyPrompt('code-fast', 'btn-copy-fast')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="prompt-body">
+        <pre class="prompt-code" id="code-fast">Mulai sesi riset skripsi baru. Jalankan protokol pre-flight Second Brain:
+1. Baca `00_DASHBOARD_SECOND_BRAIN.md` dan `04_Riset_&_Metodologi/SOURCE_OF_TRUTH.md`.
+2. Periksa status capaian terakhir di `04_Riset_&_Metodologi/LOG_SESI_SECOND_BRAIN.md`.
+3. Laporkan status naskah v2 dan daftar item [OPEN] prioritas yang siap kita selesaikan hari ini.</pre>
+      </div>
+      <div class="card-footer">
+        <span>💡 <strong>Target Hasil:</strong> Respon instan tanpa membebani context window dengan instruksi berulang.</span>
+        <span>Cocok untuk IDE lokal</span>
+      </div>
+    </div>
+
+    <!-- PROMPT 3: BIMBINGAN REVISI -->
+    <div class="prompt-card" id="card-revisi">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2>👩‍🏫 Sesi Pembahasan Revisi Pembimbing</h2>
+          <p>Gunakan setelah bimbingan dengan Dr. Fredella Colline untuk memperbarui kanon & rencana aksi naskah.</p>
+        </div>
+        <button class="copy-btn" id="btn-copy-revisi" onclick="copyPrompt('code-revisi', 'btn-copy-revisi')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="prompt-body">
+        <pre class="prompt-code" id="code-revisi">Mulai sesi: Pembahasan Catatan Bimbingan Dosen Pembimbing (Dr. Fredella Colline).
+Tolong lakukan pre-flight check pada `SOURCE_OF_TRUTH.md` dan `00_DASHBOARD_SECOND_BRAIN.md`.
+Siapkan alur kerja berikut:
+1. Saya akan menyampaikan poin-poin catatan/revisi dari pembimbing.
+2. Analisis dampaknya terhadap parameter beku (V01–V07, P01–P08) serta naskah Bab I, II, atau III.
+3. Rumuskan draf entri keputusan kanonik baru (D08+) lengkap dengan tanggal, dasar pertimbangan akademik, dan implikasinya pada naskah.
+4. Buat rencana revisi bertahap sebelum menyentuh dokumen naskah utama.</pre>
+      </div>
+      <div class="card-footer">
+        <span>💡 <strong>Target Hasil:</strong> Dokumentasi audit keputusan (D-log) sebelum mengubah teks proposal.</span>
+        <span>Kepatuhan SoT</span>
+      </div>
+    </div>
+
+    <!-- PROMPT 4: PUSTAKA & SKALA -->
+    <div class="prompt-card" id="card-pustaka">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2>📚 Riset Pustaka & Skala Pengukuran</h2>
+          <p>Gunakan untuk mencari rujukan jurnal baku, indikator kuesioner Tabel 3.1, dan menutup item [OPEN].</p>
+        </div>
+        <button class="copy-btn" id="btn-copy-pustaka" onclick="copyPrompt('code-pustaka', 'btn-copy-pustaka')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="prompt-body">
+        <pre class="prompt-code" id="code-pustaka">Mulai sesi: Penguatan Pustaka & Skala Pengukuran Konstruk Penelitian.
+Patuhi aturan zero ghost citations dan no login-wall sources:
+1. Baca draf `01_Naskah_Utama/BAB_II_DRAF.md`, `BAB_III_DRAF.md`, dan `DAFTAR_PUSTAKA_SEMENTARA.md`.
+2. Fokus bantu saya mencari dan memvalidasi sumber primer (jurnal/buku metodologi bereputasi) untuk:
+   - Skala baku dan operasionalisasi dimensi/indikator X1 (Influencer Marketing), X2 (eWOM), X3 (Perceived Enjoyment), dan Y (Intention to Play).
+   - Penguatan novelty empiris dan gap penelitian.
+3. Pastikan setiap sumber yang diajukan memiliki DOI riil, nama jurnal terindeks, tahun terbit valid, dan format penulisan APA 7th Edition yang sempurna.</pre>
+      </div>
+      <div class="card-footer">
+        <span>💡 <strong>Target Hasil:</strong> Validasi operasional variabel tanpa fabrikasi referensi ilmiah.</span>
+        <span>Anti Ghost Citation</span>
+      </div>
+    </div>
+
+    <!-- PROMPT 5: BUILD & AUDIT -->
+    <div class="prompt-card" id="card-build">
+      <div class="card-header">
+        <div class="card-title-group">
+          <h2>🛠️ Build & Audit Dokumen (DOCX / PDF)</h2>
+          <p>Gunakan untuk mengompilasi draf markdown ke DOCX/PDF 35 halaman serta menjalankan verifikasi otomatis.</p>
+        </div>
+        <button class="copy-btn" id="btn-copy-build" onclick="copyPrompt('code-build', 'btn-copy-build')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          Salin Prompt
+        </button>
+      </div>
+      <div class="prompt-body">
+        <pre class="prompt-code" id="code-build">Mulai sesi: Build & Layout Audit Dokumen Proposal v2.
+1. Periksa skrip deterministik di `scratch/build_v2.py` dan `scratch/verify_all.py`.
+2. Pastikan seluruh 35 halaman naskah memenuhi standar Pedoman UKRIDA 2023:
+   - Margin tepat 4-3-3-3 cm (kiri 4cm, atas/kanan/bawah 3cm).
+   - Tabulasi titik-titik DAFTAR ISI/TABEL/GAMBAR rata kanan pada koordinat 14.0 cm (bebas orphan dots).
+   - Tabel APA terbuka (tanpa garis vertikal).
+   - Gambar 2.1 kerangka beresolusi 300 DPI dengan keterangan sumber yang sesuai.
+   - Penomoran halaman: Halaman judul tanpa nomor, halaman pendahuluan angka romawi kecil (ii, iii, iv) di tengah, naskah utama angka arab (1, 2, ... 31) di kanan atas/bawah.
+3. Jalankan verifikasi otomatis dan laporkan hasil audit (PASS / FAIL).</pre>
+      </div>
+      <div class="card-footer">
+        <span>💡 <strong>Target Hasil:</strong> Naskah bebas cacat margin, layout, dan penomoran sebelum diserahkan ke dosen.</span>
+        <span>Audit Otomatis</span>
+      </div>
+    </div>
+
+    <!-- Cheat Sheet / Parameter Collapsible -->
+    <div class="cheatsheet-section">
+      <div class="accordion-header" id="accordion-btn" onclick="toggleAccordion()">
+        <h3>📋 Ringkasan Parameter Kanonis (V01–V07 & P01–P08)</h3>
+        <span class="accordion-arrow">▼</span>
+      </div>
+      <div class="accordion-content" id="accordion-panel">
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Parameter</th>
+              <th>Status Kanonis</th>
+              <th>Keterangan / Nilai</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>V01</strong></td>
+              <td>Variabel Y</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Intention to Play Mobile Legends</td>
+            </tr>
+            <tr>
+              <td><strong>V02</strong></td>
+              <td>Variabel X1</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Influencer Marketing</td>
+            </tr>
+            <tr>
+              <td><strong>V03</strong></td>
+              <td>Variabel X2</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Electronic Word-of-Mouth (eWOM)</td>
+            </tr>
+            <tr>
+              <td><strong>V04</strong></td>
+              <td>Variabel X3</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Perceived Enjoyment</td>
+            </tr>
+            <tr>
+              <td><strong>V05-V06</strong></td>
+              <td>Objek & Populasi</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Game Mobile Legends / Generasi Z di Indonesia</td>
+            </tr>
+            <tr>
+              <td><strong>V07</strong></td>
+              <td>Model Struktural</td>
+              <td><span class="badge badge-success">VERIFIED</span></td>
+              <td>Direct effects (X1, X2, X3 → Y) tanpa mediasi/moderasi</td>
+            </tr>
+            <tr>
+              <td><strong>P04</strong></td>
+              <td>Software Analisis</td>
+              <td><span class="badge badge-accent">OPEN</span></td>
+              <td>Opsi: SPSS (Regresi Linier Berganda) vs SmartPLS (SEM)</td>
+            </tr>
+            <tr>
+              <td><strong>P06</strong></td>
+              <td>Kriteria Gen Z & N</td>
+              <td><span class="badge badge-accent">OPEN</span></td>
+              <td>Rentang tahun lahir, kriteria aktif main, target N sampel</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast Element -->
+  <div class="toast" id="toast-msg">
+    <span>✅</span>
+    <span id="toast-text">Prompt berhasil disalin ke clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Dikembangkan untuk mendukung Skripsi Siddharta Pratama Budiono (NIM: 312023017)</p>
+    <p style="margin-top: 0.35rem; color: #6b7280;">Program Studi Manajemen FEB UKRIDA • Source of Truth v1.0 • Pedoman TA 2023</p>
+  </footer>
+
+  <script>
+    // Tab switching
+    function switchTab(tabKey) {
+      // Buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById('tab-' + tabKey);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Cards
+      document.querySelectorAll('.prompt-card').forEach(card => card.classList.remove('active'));
+      const activeCard = document.getElementById('card-' + tabKey);
+      if (activeCard) activeCard.classList.add('active');
+    }
+
+    // Copy to clipboard
+    function copyPrompt(codeElementId, buttonId) {
+      const codeEl = document.getElementById(codeElementId);
+      const btnEl = document.getElementById(buttonId);
+      if (!codeEl || !btnEl) return;
+
+      const text = codeEl.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        // Button visual feedback
+        const originalHtml = btnEl.innerHTML;
+        btnEl.classList.add('copied');
+        btnEl.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Tersalin!`;
+
+        // Toast feedback
+        showToast("Prompt berhasil disalin ke clipboard!");
+
+        setTimeout(() => {
+          btnEl.classList.remove('copied');
+          btnEl.innerHTML = originalHtml;
+        }, 2200);
+      }).catch(err => {
+        console.error("Gagal menyalin text: ", err);
+        showToast("Gagal menyalin prompt otomatis.");
+      });
+    }
+
+    // Toast notification handler
+    function showToast(message) {
+      const toast = document.getElementById('toast-msg');
+      const toastText = document.getElementById('toast-text');
+      if (!toast) return;
+      toastText.innerText = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Toggle cheat sheet accordion
+    function toggleAccordion() {
+      const header = document.getElementById('accordion-btn');
+      const panel = document.getElementById('accordion-panel');
+      if (!header || !panel) return;
+
+      const isExpanded = panel.style.display === 'block';
+      if (isExpanded) {
+        panel.style.display = 'none';
+        header.classList.remove('active');
+      } else {
+        panel.style.display = 'block';
+        header.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

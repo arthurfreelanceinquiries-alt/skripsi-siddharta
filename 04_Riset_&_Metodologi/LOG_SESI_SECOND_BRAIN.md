@@ -30,3 +30,33 @@
   3. `04_Riset_&_Metodologi/LOG_SESI_SECOND_BRAIN.md` (file ini, baru)
 - **Verifikasi:** 0 URL/DOI/angka/jurnal dikarang (Ledger E01–E04 = OPEN + tipe dibutuhkan). 0 file OUT-OF-SCOPE dimodifikasi. 0 commit/push.
 - **Next:** Verifikasi pedoman+pembimbing (D08) → kunci P06 (definisi Gen Z+sampel) → kunci P04 (SPSS vs SmartPLS) → isi E01–E04 dengan sumber ALIVE → luluskan F1.
+
+---
+
+> [!SUMMARY] Sesi 02 — Eliminasi Simultan, Perapihan Paragraf Bab I & Cover, Verifikasi Pustaka SINTA & Open Access, dan Push GitHub (2026-10-02)
+> - **Tujuan:** Menjawab revisi user terkait cover, eliminasi pengujian simultan (H4), perapihan narasi Latar Belakang Bab I (penjelasan 3 konteks & konversi notasi teknis N= ke narasi responden), verifikasi keabsahan rujukan SINTA & Open Access, serta push ke repositori GitHub.
+> - **Output:** 
+>   * Naskah final Word: `Proposal_Skripsi_MLBB_GenZ_v2.docx` (478 KB)
+>   * Naskah final PDF: `Proposal_Skripsi_MLBB_GenZ_v2.pdf` (769 KB, 34 halaman)
+>   * Verifikasi audit kelulusan naskah: 52/52 PASS (0 errors).
+> - **Keputusan:** D08 (eliminasi simultan H4 & fokus direct-effects H1–H3) dan D09 (penyesuaian narasi akademik responden, verifikasi akreditasi SINTA & Open Access).
+> - **Status akhir:** Dokumen proposal v2 siap untuk bimbingan/seminar; repositori disinkronkan ke remote GitHub `arthurfreelanceinquiries-alt/skripsi-siddharta`.
+
+## Sesi 02 — Revisi Naskah Proposal & Sinkronisasi Git (2026-10-02)
+
+- **Goal-link:** Eksekusi perbaikan komprehensif naskah proposal tugas akhir v2 dan sinkronisasi repositori GitHub.
+- **Input user:**
+  1. Hapus gelar "(S.M.)", label "Nama :", dan buka kurung pada nama mahasiswa di cover.
+  2. Ratakan seluruh nomor halaman ke sebelah kanan.
+  3. Hapus teks "KONSENTRASI MANAJEMEN PEMASARAN" dan kata "S1" pada judul prodi cover.
+  4. Hapus pengujian simultan (H4), rumusan masalah ke-4, tujuan ke-4, dan bagan panah simultan.
+  5. Perbaiki kalimat kurung pertama terkait data populasi pengguna internet (Gen Z vs populasi nasional).
+  6. Perbaiki kalimat narasi Latar Belakang agar mengalir alami, akademis, dan bersih dari catatan audit mentah.
+  7. Hapus label "NIM :" pada cover, menyisakan langsung nomor NIM 312023017.
+  8. Jelaskan maksud dari ketiga konteks pada Latar Belakang Bab I (konektivitas makro & Gen Z, pertumbuhan industri gim seluler & lokalisasi MLBB, dan ekosistem liga profesional MPL ID & saluran resmi).
+  9. Jelaskan status sitasi nasional (SINTA, kepastian Full-Text PDF, dan Open Access 100% gratis).
+  10. Jelaskan arti "N =" dan ubah ke kalimat narasi yang alami ("terhadap ... responden").
+  11. Push seluruh berkas ke GitHub: `https://github.com/arthurfreelanceinquiries-alt/skripsi-siddharta`.
+- **Verifikasi & Build:**
+  - `scratch/verify_all.py` dijalankan: 52/52 checks PASS.
+  - Repositori disinkronkan ke branch `main`.

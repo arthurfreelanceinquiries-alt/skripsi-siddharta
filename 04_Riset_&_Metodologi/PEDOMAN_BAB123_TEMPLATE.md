@@ -98,7 +98,7 @@ Legenda: **VERIFIED** = teks eksplisit di Buku Pedoman (ada nomor baris). **TERK
 - [ ] **Format kalimat WAJIB** [L148–150]:
   - `H1: Variabel X1 berpengaruh positif terhadap variabel Y`
   - `H2: Variabel X2 berpengaruh positif terhadap variabel Y` (dst.)
-- [ ] SoT binding (PROPOSED, SoT §3): `H1: b1>0; H2: b2>0; H3: b3>0; H4 simultan R² signifikan` (Opsi A) / analog path (Opsi B). Arah positif adalah proposisi yang diuji, bukan temuan.
+- [ ] SoT binding (PROPOSED, SoT §3): `H1: b1>0; H2: b2>0; H3: b3>0` (Opsi A) / analog path (Opsi B) (simultan dieliminasi per D08). Arah positif adalah proposisi yang diuji, bukan temuan.
 
 ### 2.7 Rerangka Penelitian [L152–154] (Model B §2.7 [L1174])
 - [ ] **Wajib bagan** yang menunjukkan hubungan antar variabel **termasuk hipotesisnya**.
