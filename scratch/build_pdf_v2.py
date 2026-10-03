@@ -12,12 +12,8 @@ from reportlab.lib import colors
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-DOCX_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.docx"
-DOCX_UPDATED = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2_updated.docx"
-if Path(DOCX_UPDATED).exists():
-    if not Path(DOCX_PATH).exists() or Path(DOCX_UPDATED).stat().st_mtime > Path(DOCX_PATH).stat().st_mtime:
-        DOCX_PATH = DOCX_UPDATED
-PDF_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.pdf"
+DOCX_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ.docx"
+PDF_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ.pdf"
 FIG_PATH = r"C:\Users\Arthur Reezan\AppData\Local\Temp\opencode\fig_v2.png"
 if not Path(FIG_PATH).exists():
     FIG_PATH = r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\scratch\fig_v2.png"

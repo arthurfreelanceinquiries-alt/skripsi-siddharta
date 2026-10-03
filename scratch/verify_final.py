@@ -1,7 +1,7 @@
 import pathlib, re, fitz
 from docx import Document
-DOCX = pathlib.Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.docx")
-PDF = pathlib.Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.pdf")
+DOCX = pathlib.Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ.docx")
+PDF = pathlib.Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ.pdf")
 OUT = pathlib.Path(r"C:\Users\ARTHUR~1\AppData\Local\Temp\opencode\verify_final.txt")
 doc = Document(str(DOCX))
 pdf = fitz.open(str(PDF))

@@ -3,12 +3,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
 
-DOCX_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2.docx")
-DOCX_UPDATED = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2_updated.docx")
-if DOCX_UPDATED.exists():
-    if not DOCX_PATH.exists() or DOCX_UPDATED.stat().st_mtime > DOCX_PATH.stat().st_mtime:
-        DOCX_PATH = DOCX_UPDATED
-PDF_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ_v2.pdf")
+DOCX_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ.docx")
+PDF_PATH = Path(r"01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ.pdf")
 
 errors = []
 

@@ -36,11 +36,11 @@
 > [!SUMMARY] Sesi 02 — Eliminasi Simultan, Perapihan Paragraf Bab I & Cover, Verifikasi Pustaka SINTA & Open Access, dan Push GitHub (2026-10-02)
 > - **Tujuan:** Menjawab revisi user terkait cover, eliminasi pengujian simultan (H4), perapihan narasi Latar Belakang Bab I (penjelasan 3 konteks & konversi notasi teknis N= ke narasi responden), verifikasi keabsahan rujukan SINTA & Open Access, serta push ke repositori GitHub.
 > - **Output:** 
->   * Naskah final Word: `Proposal_Skripsi_MLBB_GenZ_v2.docx` (478 KB)
->   * Naskah final PDF: `Proposal_Skripsi_MLBB_GenZ_v2.pdf` (769 KB, 34 halaman)
+>   * Naskah final Word: `Proposal_Skripsi_MLBB_GenZ.docx` (478 KB)
+>   * Naskah final PDF: `Proposal_Skripsi_MLBB_GenZ.pdf` (769 KB, 34 halaman)
 >   * Verifikasi audit kelulusan naskah: 52/52 PASS (0 errors).
 > - **Keputusan:** D08 (eliminasi simultan H4 & fokus direct-effects H1–H3) dan D09 (penyesuaian narasi akademik responden, verifikasi akreditasi SINTA & Open Access).
-> - **Status akhir:** Dokumen proposal v2 siap untuk bimbingan/seminar; repositori disinkronkan ke remote GitHub `arthurfreelanceinquiries-alt/skripsi-siddharta`.
+> - **Status akhir:** Dokumen proposal siap untuk bimbingan/seminar; repositori disinkronkan ke remote GitHub `arthurfreelanceinquiries-alt/skripsi-siddharta`.
 
 ## Sesi 02 — Revisi Naskah Proposal & Sinkronisasi Git (2026-10-02)
 
@@ -60,3 +60,15 @@
 - **Verifikasi & Build:**
   - `scratch/verify_all.py` dijalankan: 52/52 checks PASS.
   - Repositori disinkronkan ke branch `main`.
+
+---
+
+> [!SUMMARY] Sesi 03 — Konsolidasi Dokumen Tunggal Tanpa Suffix Versi (2026-10-03)
+> - **Tujuan:** Menghilangkan seluruh variasi penamaan versi (v1, v2, v2_updated) di folder `01_Naskah_Utama/` sehingga hanya tersisa satu dokumen Word kanonik (`Proposal_Skripsi_MLBB_GenZ.docx`) dan satu dokumen PDF kanonik (`Proposal_Skripsi_MLBB_GenZ.pdf`), serta mengarahkan seluruh build script dan verifikasi ke dokumen tunggal tersebut.
+> - **Output:** 
+>   * `01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ.docx` (478.895 bytes)
+>   * `01_Naskah_Utama/Proposal_Skripsi_MLBB_GenZ.pdf` (769.406 bytes, 34 halaman)
+>   * Dokumen versi lama (`_v2.docx`, `_v2.pdf`, `_v2_updated.docx`, `BUILD_LOG_*_v2.md`) dihapus total.
+>   * Audit verifikasi kelulusan naskah: 52/52 PASS (0 errors).
+> - **Keputusan:** D10 (Konsolidasi Naskah Tunggal Kanonik).
+> - **Status akhir:** Repositori disinkronkan dan di-push ke GitHub `main`.

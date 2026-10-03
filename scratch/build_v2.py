@@ -12,8 +12,8 @@ from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
 BASE = Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama")
-OUT_DOCX = BASE / "Proposal_Skripsi_MLBB_GenZ_v2.docx"
-OUT_LOG = BASE / "BUILD_LOG_DOCX_v2.md"
+OUT_DOCX = BASE / "Proposal_Skripsi_MLBB_GenZ.docx"
+OUT_LOG = BASE / "BUILD_LOG_DOCX.md"
 BAB1 = BASE / "BAB_I_DRAF.md"
 BAB2 = BASE / "BAB_II_DRAF.md"
 BAB3 = BASE / "BAB_III_DRAF.md"
@@ -1108,7 +1108,6 @@ try:
     doc.save(str(OUT_DOCX))
     print(f"saved {OUT_DOCX} size={OUT_DOCX.stat().st_size}")
 except PermissionError:
-    fallback_docx = BASE / "Proposal_Skripsi_MLBB_GenZ_v2_updated.docx"
-    doc.save(str(fallback_docx))
-    print(f"[NOTE] {OUT_DOCX.name} is locked by Word. Saved updated copy to {fallback_docx.name} size={fallback_docx.stat().st_size}")
+    print(f"[ERROR] {OUT_DOCX.name} sedang dibuka oleh Microsoft Word. Harap tutup Word dan jalankan ulang script ini.")
+    raise
 print(f"entries={len(entries)} paras={len(doc.paragraphs)} tables={len(doc.tables)} sections={len(doc.sections)}")

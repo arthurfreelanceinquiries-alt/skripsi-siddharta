@@ -1,6 +1,6 @@
 import docx, re
 from pathlib import Path
-p = Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ_v2.docx")
+p = Path(r"Z:\SKRIPSII\SKRIPSI ARTHUR\skripsi siddharta\01_Naskah_Utama\Proposal_Skripsi_MLBB_GenZ.docx")
 d = docx.Document(str(p))
 out = []
 out.append(f"paras={len(d.paragraphs)} tables={len(d.tables)} sections={len(d.sections)}")

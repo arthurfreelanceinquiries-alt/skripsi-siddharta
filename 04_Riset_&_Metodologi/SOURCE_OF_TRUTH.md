@@ -81,6 +81,7 @@ Legenda status: **VERIFIED** = terbukti dari judul/pernyataan user eksplisit. **
 | D07 | SoT v1.0 ini ditetapkan sebagai baseline kanonis perdana (Bagian 2 & 4 Master Directive); perubahan berikutnya via D08+ tanpa menghapus baris lama | 2026-10-01 | Master Directive Bagian 2 & 4: buat file kanonis perdana |
 | D08 | Eliminasi pengujian simultan (H4): Penelitian difokuskan murni pada pengaruh langsung masing-masing variabel prediktor (H1: X1→Y, H2: X2→Y, H3: X3→Y). Rumusan masalah butir 4, tujuan penelitian butir 4, hipotesis H4 simultan, bagan panah simultan Gambar 2.1, serta uji F simultan dihapus dari draf Bab 1, 2, 3 dan naskah proposal. | 2026-10-02 | Permintaan eksplisit user (penyederhanaan fokus riset langsung/parsial) |
 | D09 | Penyesuaian notasi teknis sampel (N = ...) di Bab I menjadi narasi akademik mengalir ('terhadap ... responden'), perapihan elemen cover proposal, serta verifikasi kelengkapan naskah (full-text PDF, SINTA, Open Access gratis tanpa paywall). | 2026-10-02 | Permintaan eksplisit user & audit integritas akademik |
+| D10 | Konsolidasi Dokumen Tunggal Kanonik: Menghapus seluruh akhiran versi (v1, v2, v2_updated). Naskah utama Word dikonsolidasikan ke Proposal_Skripsi_MLBB_GenZ.docx dan PDF ke Proposal_Skripsi_MLBB_GenZ.pdf (34 halaman), serta seluruh build script dan verifikasi diarahkan ke file tunggal tersebut. | 2026-10-03 | Permintaan eksplisit user |
 
 ## 3. Model / Kerangka (frozen verbatim)
 
