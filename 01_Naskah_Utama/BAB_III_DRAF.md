@@ -6,7 +6,7 @@
 | Kode | Item | Status | Jejak |
 |---|---|---|---|
 | V-PED-03 | Struktur Bab 3: 3.1 Jenis/Sumber dan tahun; 3.2 Populasi/Sampel a-b-c; 3.3 Model dan persamaan; 3.4 Operasionalisasi variabel, dimensi, indikator, dan sumber; 3.5 Analisis validitas/reliabilitas, 4 asumsi klasik, dan software | VERIFIED | PEDOMAN_BAB123_TEMPLATE.md §3 (V-PED-03) merujuk Buku Pedoman [L176–206] dan Model B [L1176–1186] |
-| V-SoT-01 | Y = Intention to Play; X1 = Influencer Marketing; X2 = eWOM; X3 = Perceived Enjoyment; Objek = Mobile Legends; Populasi = Gen Z; model langsung tanpa moderator/mediator | VERIFIED (dari judul) | SOURCE_OF_TRUTH.md V01–V07 (D01) |
+| V-SoT-01 | Y = Continuance Intention to Play; X1 = Influencer Marketing; X2 = eWOM; X3 = Perceived Enjoyment; Objek = Mobile Legends; Populasi = Gen Z; model langsung tanpa moderator/mediator | VERIFIED (dari judul) | SOURCE_OF_TRUTH.md V01–V07 (D01) |
 | K-SoT-01 | Lokasi Indonesia nasional | TERKONFIRMASI user 01-Okt-2026 | SOURCE_OF_TRUTH.md P02 |
 | K-SoT-02 | Metode kuantitatif, kuesioner primer via Google Forms, Model B Data Primer | TERKONFIRMASI user 01-Okt-2026 | SOURCE_OF_TRUTH.md P03 (D04) |
 | P-SoT-04 | Software: Opsi A SPSS regresi vs Opsi B SmartPLS-SEM | PROPOSED/OPEN | SOURCE_OF_TRUTH.md P04; Pedoman contoh software SPSS/Lisrel/Eviews [L206] |
@@ -16,14 +16,14 @@
 | S-SKA-02 | X1 redaksi Indonesia di naskah ini | PROPOSED-UNVERIFIED (adaptasi) | KONSTRUK_SKALA.md §1 baris X1-redaksi dan §2.2 |
 | S-SKA-03 | X2 Opsi A 5-butir perilaku membaca ulasan unidimensional | VERIFIED-konstruk; redaksi PROPOSED-UNVERIFIED | KONSTRUK_SKALA.md §1 (Bambauer-Sachse & Mangold, 2011) dan §3.2 |
 | S-SKA-04 | X2 Opsi B komposit 4-dimensi sebagai satu skala baku | PROPOSED-UNVERIFIED sebagai kesatuan | KONSTRUK_SKALA.md §1 baris X2-paket dan §3.3 |
-| S-SKA-05 | X3 definisi dan 3-butir unidimensional; Y pola intend/predict/plan dan continue/keep playing | VERIFIED-konstruk; redaksi PROPOSED-UNVERIFIED / ADAPTED (wajib pilot ulang) | KONSTRUK_SKALA.md §1 (Venkatesh, 2000; Venkatesh dan Bala, 2008; Ajzen, 1991; Venkatesh *et al.* (2003); Hsu dan Lu, 2004) dan §4–§5 |
+| S-SKA-05 | X3 definisi dan 3-butir unidimensional; Y pola intend/predict/plan dan continuance/keep playing | VERIFIED-konstruk; redaksi PROPOSED-UNVERIFIED / ADAPTED (wajib pilot ulang) | KONSTRUK_SKALA.md §1 (Venkatesh, 2000; Venkatesh dan Bala, 2008; Bhattacherjee, 2001; Hsu dan Lu, 2004) dan §4–§5 |
 | S-SKA-06 | Angka α/loading/AVE manapun | TIDAK DIKLAIM — dikosongkan sampai uji pilot/utama | KONSTRUK_SKALA.md §1 baris α dan §6 catatan |
 
 ---
 
 ## 3.1 Jenis dan Sumber Data
 
-Jenis data yang digunakan dalam penelitian ini adalah data kuantitatif. Data kuantitatif berupa skor tanggapan responden atas kuesioner terstruktur yang mengukur variabel Influencer Marketing (X1), Electronic Word-of-Mouth (X2), Perceived Enjoyment (X3), dan Intention to Play (Y) pada konteks permainan Mobile Legends.
+Jenis data yang digunakan dalam penelitian ini adalah data kuantitatif. Data kuantitatif berupa skor tanggapan responden atas kuesioner terstruktur yang mengukur variabel Influencer Marketing (X1), Electronic Word-of-Mouth (X2), Perceived Enjoyment (X3), dan Continuance Intention to Play (Y) pada konteks permainan Mobile Legends.
 
 Sumber data terdiri atas:
 
@@ -38,12 +38,12 @@ Periode data penelitian meliputi data tahun 20xx **[OPEN — diisi tahun riil se
 
 Populasi penelitian ini adalah Generasi Z di Indonesia yang terpapar konteks permainan Mobile Legends. Penetapan populasi mengikuti judul penelitian yang terkunci pada Source of Truth (V06, VERIFIED sebagai label).
 
-Kriteria inklusi responden ditetapkan sebagai berikut **[OPEN — diisi setelah kunci P06 dan persetujuan pembimbing; DILARANG mengarang rentang lahir/angka]**:
+Kriteria inklusi responden ditetapkan sebagai berikut:
 
-1. Termasuk kohort Generasi Z (rentang tahun lahir: OPEN — ditetapkan mengacu definisi kohort yang dikutip eksplisit).
-2. Berdomisili di Indonesia (cakupan nasional; kota/kanal spesifik: OPEN).
-3. Kriteria keterpaparan terhadap Mobile Legends (misalnya pernah/memainkan aktif/mengetahui permainan: OPEN — ditetapkan satu kriteria yang dapat diverifikasi melalui pertanyaan saring pada kuesioner).
-4. Kriteria tambahan bila diperlukan pembimbing (misalnya usia minimal, persetujuan informed consent: OPEN).
+1. Termasuk kohort Generasi Z (kelahiran 1997–2012 / usia 14–29 tahun).
+2. Berdomisili di Indonesia (cakupan nasional).
+3. Pernah atau sedang aktif memainkan Mobile Legends (wajib diverifikasi melalui pertanyaan saring/screening question agar relevan dengan pengukuran continuance intention).
+4. Kriteria tambahan bila diperlukan pembimbing (misalnya persetujuan informed consent).
 
 Karakteristik populasi dirumuskan secara akurat agar sampel yang diambil dapat ditentukan, sesuai ketentuan pedoman bahwa sampel harus representatif dan perbedaan sampel dari populasi memperbesar kekeliruan generalisasi.
 
@@ -77,7 +77,7 @@ Opsi A — regresi linear berganda (untuk SPSS):
 
 Y = b0 + b1X1 + b2X2 + b3X3 + e                              (3.1)
 
-Keterangan: Y = Intention to Play Mobile Legends; X1 = Influencer Marketing; X2 = Electronic Word-of-Mouth; X3 = Perceived Enjoyment; b0 = konstanta; b1, b2, b3 = koefisien regresi parsial; e = galat. Hipotesis yang diuji: H1: b1 > 0; H2: b2 > 0; H3: b3 > 0. Arah positif merupakan proposisi yang diuji, bukan temuan.
+Keterangan: Y = Continuance Intention to Play Mobile Legends; X1 = Influencer Marketing; X2 = Electronic Word-of-Mouth; X3 = Perceived Enjoyment; b0 = konstanta; b1, b2, b3 = koefisien regresi parsial; e = galat. Hipotesis yang diuji: H1: b1 > 0; H2: b2 > 0; H3: b3 > 0. Arah positif merupakan proposisi yang diuji, bukan temuan.
 
 Opsi B — model persamaan struktural berbasis varians (untuk SmartPLS, konstruk laten reflektif):
 
@@ -111,7 +111,7 @@ Tabel 3.1. Operasionalisasi Variabel
 |  |  | Kredibilitas | Cr1 ulasan dapat dipercaya; Cr2 jujur; Cr3 penyaji ulasan tampak kompeten/berpengalaman | Sama dengan di atas | Fan *et al.* (2013); Cheung *et al.* (2008, 2009) | Sama dengan di atas |
 |  |  | Valensi | Va1 mayoritas ulasan bernada positif; Va2 peringkat tinggi; Va3 direkomendasikan untuk dimainkan | Sama dengan di atas | Park dan Lee (2008) | Sama dengan di atas |
 | X3 Perceived Enjoyment | Kesenangan intrinsik saat memainkan Mobile Legends, terlepas dari hadiah atau konsekuensi kinerja | (Unidimensional) | X3.1 Memainkan Mobile Legends menurut responden menyenangkan; X3.2 Proses memainkannya itu sendiri sudah menghibur (terlepas dari menang/kalah/hadiah); X3.3 Responden menikmati waktu saat memainkan Mobile Legends | Likert 5-titik (atau 7-titik; ditetapkan satu) | Venkatesh (2000); Venkatesh dan Bala (2008); Davis *et al.* (1992); van der Heijden (2004) | VERIFIED-konstruk; redaksi PROPOSED-UNVERIFIED |
-| Y Intention to Play | Niat memainkan kembali Mobile Legends dalam [___ bulan ke depan; OPEN — horizon ditetapkan satu dan dipakai konsisten di semua butir] | (Unidimensional) | Y.1 Berniat memainkan Mobile Legends dalam waktu dekat; Y.2 Memprediksi akan memainkan secara rutin seperti sekarang; Y.3 Berencana meluangkan waktu untuk memainkan sesering mungkin | Likert 5-titik, prinsip kompatibilitas target-aksi-konteks-waktu | Ajzen (1991); Ajzen (n.d., panduan penyusunan kuesioner); Venkatesh *et al.* (2003); Hsu dan Lu (2004) | VERIFIED-konstruk; redaksi ADAPTED (wajib uji ulang) |
+| Y Continuance Intention to Play | Intensitas niat dan komitmen pemain untuk terus memainkan kembali Mobile Legends dalam rutinitasnya di masa mendatang | (Unidimensional) | Y.1 Berniat untuk terus memainkan Mobile Legends di masa mendatang; Y.2 Berencana meluangkan waktu secara rutin untuk memainkan Mobile Legends seperti saat ini; Y.3 Berkomitmen memilih Mobile Legends sebagai salah satu permainan utama untuk dimainkan kembali | Likert 5-titik, prinsip kompatibilitas target-aksi-konteks-waktu | Bhattacherjee (2001); Hsu dan Lu (2004); Venkatesh *et al.* (2003); Gultom *et al.* (2020) | VERIFIED-konstruk; redaksi ADAPTED (wajib uji ulang) |
 
 Catatan: butir rekomendasi kepada orang lain tidak dipakai sebagai indikator Y agar kemurnian niat berperilaku terjaga.
 

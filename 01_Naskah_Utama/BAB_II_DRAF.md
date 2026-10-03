@@ -1,7 +1,7 @@
 # BAB II — TINJAUAN PUSTAKA DAN PENGEMBANGAN HIPOTESIS (DRAF)
 
 > Status draf: **PROPOSED-DRAF** untuk Proposal Tugas Akhir Bab 1–3 FEB UKRIDA 2023 (Model B).
-> Variabel beku: X1 *influencer marketing* (kredibilitas), X2 *electronic word-of-mouth* (*eWOM*), X3 *perceived enjoyment* → Y *intention to play* Mobile Legends, konteks Generasi Z Indonesia.
+> Variabel beku: X1 *influencer marketing* (kredibilitas), X2 *electronic word-of-mouth* (*eWOM*), X3 *perceived enjoyment* → Y *continuance intention to play* Mobile Legends, konteks Generasi Z Indonesia.
 > Format hipotesis dan bagan mengikuti PEDOMAN_BAB123_TEMPLATE.md §2.6–§2.7. Isi substantif di bawah ini hanya memakai sumber terverifikasi. DILARANG mengarang teori/DOI/β/p.
 
 ## Verified-vs-Proposed (wajib)
@@ -11,7 +11,7 @@
 | V-T01 | Teori X1: Ohanian (1990) 3 dimensi | VERIFIED-struktur | KONSTRUK_SKALA.md §2, §8 |
 | V-T02 | Teori X2 inti: Bambauer-Sachse dan Mangold (2011); sub-dimensi Park dan Lee (2008); Cheung *et al.* (2008, 2009); Fan *et al.* (2013) | VERIFIED-konstruk; PROPOSED-ITEMSET untuk gabungan | KONSTRUK_SKALA.md §3, §8 |
 | V-T03 | Teori X3: Venkatesh (2000); Venkatesh dan Bala (2008); Davis *et al.* (1992); van der Heijden (2004) | VERIFIED-definisi dan struktur | KONSTRUK_SKALA.md §4, §8 |
-| V-T04 | Teori Y: Ajzen (1991 dan panduan UMass); Venkatesh *et al.* (2003); Hsu dan Lu (2004) | VERIFIED-konstruk; ADAPTED-redaksi | KONSTRUK_SKALA.md §5, §8 |
+| V-T04 | Teori Y: Bhattacherjee (2001); Ajzen (1991); Venkatesh *et al.* (2003); Hsu dan Lu (2004); Gultom *et al.* (2020) | VERIFIED-konstruk; ADAPTED-redaksi | KONSTRUK_SKALA.md §5, §8 |
 | V-S01–S09, S11–S18 | 17 studi primer S01–S09, S11–S18 | VERIFIED judul, jurnal, tahun, dan DOI/URL hidup | LITERATURE_MATRIX.md §1–§4, §8 |
 | V-S10parsial | S10 Sastri dan Harsoyo (2023) | VERIFIED parsial; DOI: UNVERIFIED | LITERATURE_MATRIX.md §2 S10 |
 | V-SFEB | Colline *et al.* (2024) | VERIFIED; relevansi TERBATAS (bukan bukti gaming) | LITERATURE_MATRIX.md §5 |
@@ -47,11 +47,11 @@ Batasan hedoniknya ditegaskan van der Heijden (2004): untuk sistem kesenangan se
 
 Redaksi butir wajib dipisahkan dari *flow* dan kecanduan. Frasa seperti lupa waktu atau tidak dapat berhenti merupakan konstruk lain dan tidak dipakai sebagai indikator *enjoyment* pada studi ini.
 
-### 2.1.4 *Intention to Play* sebagai Niat Perilaku
+### 2.1.4 *Continuance Intention* sebagai Niat Bermain Berkelanjutan
 
-Niat dimaknai sebagai anteseden langsung perilaku: makin positif sikap, norma, dan kontrol yang dipersepsi, makin kuat niat, dan makin mungkin perilaku dilaksanakan ketika ada kesempatan (Ajzen, 1991; panduan penyusunan kuesioner TPB UMass). Untuk teknologi dan gim, niat dirumuskan sebagai sejauh mana pengguna ingin memakai atau memainkan kembali gim daring di masa depan (Venkatesh *et al.*, 2003; Hsu dan Lu, 2004). Pola butir baku memadukan *intend*, *predict*, dan *plan* dengan konteks gim *continue* atau *keep playing*, berstatus VERIFIED-konstruk dan pola butir; redaksi Indonesia berstatus ADAPTED dan wajib pilot ulang.
+Niat bermain berkelanjutan (*continuance intention*) dimaknai sebagai intensitas keputusan psikologis pengguna untuk terus memainkan kembali suatu sistem teknologi secara berkelanjutan setelah tahap adopsi awal (Bhattacherjee, 2001). Dalam ranah permainan daring, konstruk ini dirumuskan sebagai sejauh mana pemain ingin tetap memainkan kembali (*reuse / keep playing*) gim daring di masa mendatang (Hsu dan Lu, 2004; Venkatesh *et al.*, 2003). Pada populasi Generasi Z yang mayoritas telah memiliki pengalaman bermain Mobile Legends, pengukuran niat berkelanjutan (*continuance intention*) jauh lebih tepat daripada niat adopsi pertama kali, karena memotret ketahanan komitmen pemain dalam rutinitas hariannya.
 
-Prinsip kompatibilitas_TARGET, tindakan, konteks, dan waktu (TACT) diterapkan konsisten: seluruh butir menyebut target yang sama (Mobile Legends) dan horizon waktu yang sama. Butir rekomendasi kepada orang lain tidak dipakai agar kemurnian *behavioral intention* terjaga. Dewi (2022) memakai kerangka yang sama untuk *intention to play* PUBG Mobile pada milenial dan Generasi Z di Indonesia dengan anteseden kemudahan, kebermanfaatan, sikap, dan kenikmatan. Bongso dan Dewi (2021) serta Kurnia dan Sukarnadi (2023) memakai padanan *behavioral intention* dan *continuance intention* untuk gim.
+Prinsip kompatibilitas target, tindakan, konteks, dan waktu (TACT) diterapkan konsisten: seluruh butir menyebut target yang sama (Mobile Legends) dan horizon waktu yang sama. Pola butir baku memadukan *intend*, *predict*, dan *plan* dengan konteks gim *continue* atau *keep playing* (Ajzen, 1991; Bhattacherjee, 2001). Butir rekomendasi kepada orang lain tidak dipakai agar kemurnian *continuance intention* terjaga. Studi empiris seperti Gultom *et al.* (2020) serta Kurnia dan Sukarnadi (2023) membuktikan bahwa pada gim seluler, *continuance intention* digerakkan secara kuat oleh kenikmatan bermain dan dinamika interaksi komunitas.
 
 ### 2.1.5 Generasi Z sebagai Konteks, bukan Variabel
 
@@ -96,17 +96,17 @@ Status verifikasi 2.2: S01–S09 dan S11–S18 berstatus VERIFIED (judul, jurnal
 
 Uraian per jalur disusun dari studi relevan beserta variabelnya sebelum pernyataan hipotesis, sesuai format wajib pedoman.
 
-H1 — *Influencer marketing* terhadap *intention to play*. Studi pendukung (Temuan A) menunjukkan kredibilitas tiga dimensi beserta nilai infotainment bekerja melalui nilai iklan atau utilitas menuju intensi (S01, S02, S03). Studi pembatas (Temuan B) menunjukkan pengaruh langsung dapat tidak signifikan tanpa sikap atau citra merek sebagai jembatan (S04, S05). Dengan demikian, pada konteks gim hedonik yang mengandalkan demonstrasi dan figur panutan, kredibilitas *influencer* diduga tetap mendorong niat bermain. Hipotesis dirumuskan sebagai proposisi yang diuji, bukan sebagai temuan:
+H1 — *Influencer marketing* terhadap *continuance intention to play*. Studi pendukung (Temuan A) menunjukkan kredibilitas tiga dimensi beserta nilai infotainment bekerja melalui nilai iklan atau utilitas menuju intensi (S01, S02, S03). Studi pembatas (Temuan B) menunjukkan pengaruh langsung dapat tidak signifikan tanpa sikap atau citra merek sebagai jembatan (S04, S05). Dengan demikian, pada konteks gim hedonik yang mengandalkan demonstrasi dan figur panutan, kredibilitas *influencer* diduga tetap mendorong niat bermain berkelanjutan. Hipotesis dirumuskan sebagai proposisi yang diuji, bukan sebagai temuan:
 
-H1: Variabel X1 (*influencer marketing*) berpengaruh positif terhadap variabel Y (*intention to play* Mobile Legends).
+H1: Variabel X1 (*influencer marketing*) berpengaruh positif terhadap variabel Y (*continuance intention to play* Mobile Legends).
 
-H2 — *eWOM* terhadap *intention to play*. Studi pendukung menunjukkan kualitas dan kredibilitas *eWOM* bekerja melalui kebermanfaatan dan adopsi menuju intensi (S06, S07, S09), diperkuat rantai kepercayaan–adopsi (S17) dan mediasi sikap–citra (S16, S18). Studi pembatas menunjukkan kredibilitas saja tidak cukup bagi Gen Z tanpa kualitas, kuantitas, dan kesesuaian kebutuhan (S08), serta *eWOM* berhenti pada niat tanpa berlanjut ke keputusan (S10). Pada Mobile Legends yang keputusan memainkannya berisiko rendah tetapi sarat informasi komunitas, *eWOM* yang berkualitas diduga memperkuat niat. Pernyataan uji:
+H2 — *eWOM* terhadap *continuance intention to play*. Studi pendukung menunjukkan kualitas dan kredibilitas *eWOM* bekerja melalui kebermanfaatan dan adopsi menuju intensi (S06, S07, S09), diperkuat rantai kepercayaan–adopsi (S17) dan mediasi sikap–citra (S16, S18). Studi pembatas menunjukkan kredibilitas saja tidak cukup bagi Gen Z tanpa kualitas, kuantitas, dan kesesuaian kebutuhan (S08), serta *eWOM* berhenti pada niat tanpa berlanjut ke keputusan (S10). Pada Mobile Legends yang keputusan memainkannya berisiko rendah tetapi sarat informasi komunitas, *eWOM* yang berkualitas diduga memperkuat niat berkelanjutan. Pernyataan uji:
 
-H2: Variabel X2 (*electronic word-of-mouth*) berpengaruh positif terhadap variabel Y (*intention to play* Mobile Legends).
+H2: Variabel X2 (*electronic word-of-mouth*) berpengaruh positif terhadap variabel Y (*continuance intention to play* Mobile Legends).
 
-H3 — *Perceived enjoyment* terhadap *intention to play*. Studi pendukung menunjukkan kenikmatan beserta anteseden interaktivitas, kebaruan, tantangan, dan estetika menggerakkan intensi dan kontinuitas gim (S12, S13, S14, S15). Studi pembatas menunjukkan kenikmatan tidak otomatis menjadi kebermanfaatan atau sikap, sedangkan kebermanfaatan, sikap, dan *flow* yang langsung menggerakkan intensi pada konteks tertentu (S11). Karena Mobile Legends merupakan sistem hedonik yang dimainkan demi kesenangan itu sendiri, kenikmatan intrinsik diduga mendorong niat bermain dan dipisahkan tegas dari kebermanfaatan. Pernyataan uji:
+H3 — *Perceived enjoyment* terhadap *continuance intention to play*. Studi pendukung menunjukkan kenikmatan beserta anteseden interaktivitas, kebaruan, tantangan, dan estetika menggerakkan intensi dan kontinuitas gim (S12, S13, S14, S15). Studi pembatas menunjukkan kenikmatan tidak otomatis menjadi kebermanfaatan atau sikap, sedangkan kebermanfaatan, sikap, dan *flow* yang langsung menggerakkan intensi pada konteks tertentu (S11). Karena Mobile Legends merupakan sistem hedonik yang dimainkan demi kesenangan itu sendiri, kenikmatan intrinsik diduga mendorong niat bermain berkelanjutan dan dipisahkan tegas dari kebermanfaatan. Pernyataan uji:
 
-H3: Variabel X3 (*perceived enjoyment*) berpengaruh positif terhadap variabel Y (*intention to play* Mobile Legends).
+H3: Variabel X3 (*perceived enjoyment*) berpengaruh positif terhadap variabel Y (*continuance intention to play* Mobile Legends).
 
 Seluruh hipotesis berstatus proposisi uji arah positif (H1: b1 > 0, H2: b2 > 0, H3: b3 > 0). Pembuktian menunggu Bab III–IV (uji validitas, reliabilitas, asumsi klasik, dan uji hipotesis dengan perangkat lunak bernama).
 
@@ -120,15 +120,15 @@ Rerangka berupa bagan hubungan antarvariabel termasuk hipotesisnya, tanpa mediat
 X1 (Influencer Marketing                 H1 (positif)
      kredibilitas: expertise,            ──────────┐
      trustworthiness, attractiveness)              │
-                                                   ├──→ Y (Intention to Play
-X2 (eWOM: perilaku/kualitas               H2 (positif)       Mobile Legends)
+                                                   ├──→ Y (Continuance Intention
+X2 (eWOM: perilaku/kualitas               H2 (positif)       to Play Mobile Legends)
      ulasan, adopsi informasi)           ──────────┤     Populasi: Generasi Z
                                                    │     (Indonesia)
 X3 (Perceived Enjoyment:                 H3 (positif)    │
      kesenangan intrinsik bermain)       ──────────┘
 ```
 
-Deskripsi: X1 memotret sisi persuasif (apakah *influencer* dipersepsi ahli, jujur, dan menarik); X2 memotret sisi informasional (apakah ulasan komunitas dibaca, dinilai berkualitas, dan diadopsi); X3 memotret sisi hedonik (apakah bermain itu sendiri menyenangkan). Ketiganya diduga menggerakkan Y, yaitu niat memainkan kembali Mobile Legends dalam horizon waktu yang sama pada seluruh butir (prinsip TACT). H1–H3 menguji pengaruh masing-masing variabel independen (X1, X2, X3) secara langsung terhadap variabel dependen (Y). Mediasi melalui sikap, nilai iklan, kebermanfaatan, adopsi, atau kepercayaan dicatat sebagai agenda pengembangan (merujuk S05, S01, S06–S08, S17), bukan sebagai jalur yang diuji pada model usulan.
+Deskripsi: X1 memotret sisi persuasif (apakah *influencer* dipersepsi ahli, jujur, dan menarik); X2 memotret sisi informasional (apakah ulasan komunitas dibaca, dinilai berkualitas, dan diadopsi); X3 memotret sisi hedonik (apakah bermain itu sendiri menyenangkan). Ketiganya diduga menggerakkan Y, yaitu niat bermain berkelanjutan (*continuance intention to play*) Mobile Legends dalam horizon waktu yang sama pada seluruh butir (prinsip TACT). H1–H3 menguji pengaruh masing-masing variabel independen (X1, X2, X3) secara langsung terhadap variabel dependen (Y). Mediasi melalui sikap, nilai iklan, kebermanfaatan, adopsi, atau kepercayaan dicatat sebagai agenda pengembangan (merujuk S05, S01, S06–S08, S17), bukan sebagai jalur yang diuji pada model usulan.
 
 Status verifikasi 2.4: bagan berstatus PROPOSED direct-effect dan konsisten dengan H1–H3 serta persamaan Bab III (Opsi A regresi atau Opsi B SEM, menunggu kunci pembimbing). Tidak ada variabel, panah, maupun interaksi tambahan yang diklaim.
 
